@@ -1,0 +1,56 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a12"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c3aed"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="1000" cy="100" r="250" fill="rgba(124,58,237,0.08)"/>
+  <circle cx="200" cy="500" r="180" fill="rgba(168,85,247,0.05)"/>
+
+  <!-- Grid lines -->
+  <line x1="0" y1="630" x2="1200" y2="630" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+
+  <!-- Logo -->
+  <rect x="60" y="60" width="48" height="48" rx="12" fill="url(#accent)"/>
+  <text x="84" y="92" font-family="Arial" font-size="28" font-weight="bold" fill="white" text-anchor="middle">⚡</text>
+  <text x="125" y="92" font-family="Arial" font-size="28" font-weight="bold" fill="white">AISubHub</text>
+
+  <!-- Main title -->
+  <text x="60" y="230" font-family="Arial" font-size="62" font-weight="900" fill="white">
+    Premium AI Subscriptions
+  </text>
+  <text x="60" y="310" font-family="Arial" font-size="62" font-weight="900" fill="url(#accent)">
+    At Wholesale Prices
+  </text>
+
+  <!-- Subtitle -->
+  <text x="60" y="380" font-family="Arial" font-size="24" fill="rgba(255,255,255,0.6)">
+    ChatGPT Plus · Claude Pro · Gemini Pro — Save up to 40% with Crypto
+  </text>
+
+  <!-- Features -->
+  <rect x="60" y="430" width="320" height="50" rx="8" fill="rgba(255,255,255,0.05)"/>
+  <text x="80" y="460" font-family="Arial" font-size="18" fill="rgba(255,255,255,0.8)">🔒  No credentials needed</text>
+
+  <rect x="400" y="430" width="240" height="50" rx="8" fill="rgba(255,255,255,0.05)"/>
+  <text x="420" y="460" font-family="Arial" font-size="18" fill="rgba(255,255,255,0.8)">⛓️  Crypto payment</text>
+
+  <rect x="660" y="430" width="240" height="50" rx="8" fill="rgba(255,255,255,0.05)"/>
+  <text x="680" y="460" font-family="Arial" font-size="18" fill="rgba(255,255,255,0.8)">🌐  8 Languages</text>
+
+  <!-- URL -->
+  <text x="60" y="550" font-family="monospace" font-size="22" fill="rgba(168,85,247,0.8)">aisubhub.pages.dev</text>
+
+  <!-- Badge -->
+  <rect x="900" y="55" width="100" height="30" rx="15" fill="rgba(16,185,129,0.15)"/>
+  <text x="950" y="75" font-family="Arial" font-size="14" fill="#10b981" text-anchor="middle" font-weight="bold">ONLINE</text>
+</svg>
