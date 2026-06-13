@@ -255,6 +255,7 @@
       footer_nav: 'Navigation',
       footer_contact: 'Contact',
       footer_languages: 'Languages',
+      footer_legal: 'Legal',
       order_lookup: 'Order Lookup',
       affiliate: 'Affiliate',
       terms: 'Terms of Service',
@@ -301,6 +302,33 @@
       claude_pro_desc: 'Access Claude\'s latest models at a fraction of the retail price.',
       claude_max_desc: 'Extended usage limits for power users who need more.',
       gemini_pro_desc: 'Google\'s most capable AI models with Drive storage included.',
+      page_title: 'AISubHub — Premium AI Subscriptions at Wholesale Prices',
+      page_desc: 'Buy cheap ChatGPT Plus, Claude Pro & Gemini Pro subscriptions with crypto. Top up your personal account — no credentials required.',
+      nav_products: 'Products',
+      nav_faq: 'FAQ',
+      nav_affiliate: 'Affiliate',
+      nav_orders: 'Orders',
+      refund_policy: 'Refund Policy',
+      share: 'Share',
+      made_with_love: 'Made with ❤️ for the AI community',
+      support_reply_note: 'We reply as soon as we can.',
+      modal_complete_order: 'Complete Order',
+      faq_q1: 'Is this a personal account subscription? Not a mirror/shared account?',
+      faq_a1: 'Yes, it\'s credited directly to your personal account — not a mirror or shared account. You use your own login credentials.',
+      faq_q2: 'How do I get a refund if there\'s an issue?',
+      faq_a2: 'Go to Order Lookup → enter the contact info you provided at checkout → copy the order number and contact Support. We offer full refund if recharge fails.',
+      faq_q3: 'Is this safe? Will my account get banned?',
+      faq_a3: 'We use official gift card and enterprise channels to complete the recharge — no account credentials required at any point, all handled automatically. If recharge fails, immediate full refund is issued.',
+      faq_q4: 'Why don\'t I need to enter my account credentials?',
+      faq_a4: 'After placing your order, the card key and redemption guide are sent to your email. Simply redeem it with your own account to activate — no need to share credentials.',
+      faq_q5: 'After recharging, it still shows "Upgrade" — why hasn\'t it taken effect?',
+      faq_a5: 'Try refreshing the page or logging out and back in (re-logging often helps). If it still hasn\'t taken effect, check your account settings or contact support with a screenshot.',
+      support_faq_q1: 'Is this my own personal account subscription?',
+      support_faq_a1: 'Yes, it\'s credited directly to your personal account — not a shared account.',
+      support_faq_q2: 'How do I get a refund?',
+      support_faq_a2: 'Go to Order Lookup → enter your contact info → copy the order number and contact Support.',
+      support_faq_q3: 'Is it safe? Will my account get banned?',
+      support_faq_a3: 'We use official channels. No credentials needed. If recharge fails, immediate refund.',
       toast_order_created: 'Order #{{number}} created successfully!',
       toast_payment_method: 'Please select a payment method',
     },
@@ -329,6 +357,7 @@
       footer_nav: '导航',
       footer_contact: '联系我们',
       footer_languages: '语言',
+      footer_legal: '法律',
       order_lookup: '订单查询',
       affiliate: '推广联盟',
       terms: '服务条款',
@@ -374,6 +403,33 @@
       claude_pro_desc: '以零售价零头获得 Claude 最新模型访问权限。',
       claude_max_desc: '为重度用户提供更多使用额度。',
       gemini_pro_desc: 'Google 最强 AI 模型，附带云端存储空间。',
+      page_title: 'AISubHub — 高级 AI 订阅，全场批发价',
+      page_desc: '用加密货币低价购买 ChatGPT Plus、Claude Pro、Gemini Pro 订阅。个人账户充值，无需提供密码。',
+      nav_products: '产品',
+      nav_faq: '常见问题',
+      nav_affiliate: '推广联盟',
+      nav_orders: '订单查询',
+      refund_policy: '退款政策',
+      share: '分享',
+      made_with_love: '用 ❤️ 为 AI 社区打造',
+      support_reply_note: '我们会尽快回复。',
+      modal_complete_order: '完成订单',
+      faq_q1: '这是个人账户订阅吗？不是镜像或共享账户吧？',
+      faq_a1: '是的，直接充值到你的个人账户 — 不是镜像或共享账户。你使用自己的登录凭证。',
+      faq_q2: '如果有问题，怎么退款？',
+      faq_a2: '前往「订单查询」→ 输入下单时提供的联系方式 → 复制订单号联系客服。充值失败全额退款。',
+      faq_q3: '这安全吗？我的账号会被封吗？',
+      faq_a3: '我们通过官方礼品卡和企业渠道完成充值 — 全程不需要你的账户密码，全自动处理。如果充值失败，立即全额退款。',
+      faq_q4: '为什么不需要我输入账户密码？',
+      faq_a4: '下单成功后，卡密和兑换指南会发送到你的邮箱。用你自己的账号兑换激活即可 — 无需分享密码。',
+      faq_q5: '充值后还是显示"升级" — 为什么没有生效？',
+      faq_a5: '尝试刷新页面或退出重新登录（重新登录通常有效）。如果仍未生效，请检查账户设置或联系客服并提供截图。',
+      support_faq_q1: '这是我自己的个人账户订阅吗？',
+      support_faq_a1: '是的，直接充值到你的个人账户 — 不是共享账户。',
+      support_faq_q2: '如何申请退款？',
+      support_faq_a2: '前往"订单查询" → 输入联系方式 → 复制订单号联系客服。',
+      support_faq_q3: '安全吗？账号会被封吗？',
+      support_faq_a3: '我们使用官方渠道。无需密码。充值失败立即退款。',
       toast_order_created: '订单 #{{number}} 创建成功！',
       toast_payment_method: '请选择支付方式',
     },
@@ -402,6 +458,7 @@
       footer_nav: 'Navigation',
       footer_contact: 'Kontakt',
       footer_languages: 'Sprachen',
+      footer_legal: 'Rechtliches',
       order_lookup: 'Bestellung suchen',
       affiliate: 'Affiliate',
       terms: 'Nutzungsbedingungen',
@@ -447,6 +504,17 @@
       claude_pro_desc: 'Zugriff auf Cluades neueste Modelle zu einem Bruchteil des Preises.',
       claude_max_desc: 'Erweiterte Nutzungslimits für Power-User.',
       gemini_pro_desc: 'Googles leistungsfähigste KI-Modelle inklusive Cloud-Speicher.',
+      page_title: 'AISubHub — Premium KI-Abos zum Großhandelspreis',
+      page_desc: 'Kaufe günstige ChatGPT Plus-, Claude Pro- und Gemini Pro-Abos mit Krypto. Aufladen deines persönlichen Kontos — keine Zugangsdaten erforderlich.',
+      nav_products: 'Produkte',
+      nav_faq: 'FAQ',
+      nav_affiliate: 'Affiliate',
+      nav_orders: 'Bestellung suchen',
+      refund_policy: 'Rückerstattungsrichtlinie',
+      share: 'Teilen',
+      made_with_love: 'Mit ❤️ für die KI-Community',
+      support_reply_note: 'Wir melden uns so bald wie möglich bei dir.',
+      modal_complete_order: 'Bestellung abschließen',
       toast_order_created: 'Bestellung #{{number}} erfolgreich erstellt!',
       toast_payment_method: 'Bitte wähle eine Zahlungsmethode',
     },
@@ -475,6 +543,7 @@
       footer_nav: 'Navegación',
       footer_contact: 'Contacto',
       footer_languages: 'Idiomas',
+      footer_legal: 'Legal',
       order_lookup: 'Buscar Pedido',
       affiliate: 'Afiliados',
       terms: 'Términos de Servicio',
@@ -520,6 +589,17 @@
       claude_pro_desc: 'Accede a los últimos modelos de Claude a una fracción del precio.',
       claude_max_desc: 'Límites de uso extendidos para usuarios avanzados.',
       gemini_pro_desc: 'Los modelos AI más potentes de Google con almacenamiento en la nube.',
+      page_title: 'AISubHub — Suscripciones AI Premium a Precios de Mayoreo',
+      page_desc: 'Compra suscripciones ChatGPT Plus, Claude Pro y Gemini Pro con cripto. Recarga tu cuenta personal — sin credenciales.',
+      nav_products: 'Productos',
+      nav_faq: 'FAQ',
+      nav_affiliate: 'Afiliados',
+      nav_orders: 'Buscar Pedido',
+      refund_policy: 'Política de Reembolso',
+      share: 'Compartir',
+      made_with_love: 'Hecho con ❤️ para la comunidad AI',
+      support_reply_note: 'Te responderemos lo antes posible.',
+      modal_complete_order: 'Completar Pedido',
       toast_order_created: '¡Pedido #{{number}} creado exitosamente!',
       toast_payment_method: 'Por favor selecciona un método de pago',
     },
@@ -548,6 +628,7 @@
       footer_nav: 'Navigation',
       footer_contact: 'Contact',
       footer_languages: 'Langues',
+      footer_legal: 'Mentions légales',
       order_lookup: 'Rechercher commande',
       affiliate: 'Affiliation',
       terms: 'Conditions d\'utilisation',
@@ -593,6 +674,17 @@
       claude_pro_desc: 'Accède aux derniers modèles Claude à une fraction du prix.',
       claude_max_desc: 'Limites d\'utilisation étendues pour les utilisateurs intensifs.',
       gemini_pro_desc: 'Les modèles AI les plus puissants de Google avec stockage cloud inclus.',
+      page_title: 'AISubHub — Abonnements AI Premium aux Prix de Gros',
+      page_desc: 'Achetez des abonnements ChatGPT Plus, Claude Pro et Gemini Pro bon marché avec crypto. Rechargez votre compte personnel — aucun identifiant requis.',
+      nav_products: 'Produits',
+      nav_faq: 'FAQ',
+      nav_affiliate: 'Affiliation',
+      nav_orders: 'Rechercher commande',
+      refund_policy: 'Politique de remboursement',
+      share: 'Partager',
+      made_with_love: 'Fait avec ❤️ pour la communauté IA',
+      support_reply_note: 'Nous vous répondrons dès que possible.',
+      modal_complete_order: 'Terminer la commande',
       toast_order_created: 'Commande #{{number}} créée avec succès !',
       toast_payment_method: 'Veuillez sélectionner un mode de paiement',
     },
@@ -621,6 +713,7 @@
       footer_nav: 'التنقل',
       footer_contact: 'اتصل بنا',
       footer_languages: 'اللغات',
+      footer_legal: 'القانوني',
       order_lookup: 'البحث عن طلب',
       affiliate: 'التسويق بالعمولة',
       terms: 'شروط الخدمة',
@@ -666,6 +759,17 @@
       claude_pro_desc: 'الوصول إلى أحدث نماذج Claude بجزء بسيط من السعر.',
       claude_max_desc: 'حدود استخدام موسعة للمستخدمين المكثفين.',
       gemini_pro_desc: 'نماذج الذكاء الاصطناعي الأكثر قدرة من Google مع تخزين سحابي.',
+      page_title: 'AISubHub — اشتراكات الذكاء الاصطناعي المميزة بأسعار الجملة',
+      page_desc: 'اشتر اشتراكات ChatGPT Plus و Claude Pro و Gemini Pro بسعر منخفض بالعملات الرقمية. اشحن حسابك الشخصي — بدون بيانات دخول.',
+      nav_products: 'المنتجات',
+      nav_faq: 'الأسئلة الشائعة',
+      nav_affiliate: 'التسويق بالعمولة',
+      nav_orders: 'البحث عن طلب',
+      refund_policy: 'سياسة الاسترداد',
+      share: 'مشاركة',
+      made_with_love: 'صنع بـ ❤️ لمجتمع الذكاء الاصطناعي',
+      support_reply_note: 'سنرد عليك في أقرب وقت ممكن.',
+      modal_complete_order: 'إكمال الطلب',
       toast_order_created: 'تم إنشاء الطلب #{{number}} بنجاح!',
       toast_payment_method: 'يرجى اختيار طريقة دفع',
     },
@@ -694,6 +798,7 @@
       footer_nav: 'ナビゲーション',
       footer_contact: 'お問い合わせ',
       footer_languages: '言語',
+      footer_legal: '法的情報',
       order_lookup: '注文照会',
       affiliate: 'アフィリエイト',
       terms: '利用規約',
@@ -739,6 +844,17 @@
       claude_pro_desc: 'Claudeの最新モデルに格安でアクセス。',
       claude_max_desc: 'ヘビーユーザー向けの拡張利用制限。',
       gemini_pro_desc: 'Googleの最も強力なAIモデル、クラウドストレージ付き。',
+      page_title: 'AISubHub — プレミアムAIサブスクリプション卸売価格',
+      page_desc: 'ChatGPT Plus、Claude Pro、Gemini Proのサブスクリプションを暗号通貨でお得に購入。個人アカウントにチャージ — 認証情報不要。',
+      nav_products: '製品',
+      nav_faq: 'よくある質問',
+      nav_affiliate: 'アフィリエイト',
+      nav_orders: '注文照会',
+      refund_policy: '返金ポリシー',
+      share: 'シェア',
+      made_with_love: 'AIコミュニティに❤️を込めて',
+      support_reply_note: 'できるだけ早くご返信いたします。',
+      modal_complete_order: '注文を完了',
       toast_order_created: '注文 #{{number}} が正常に作成されました！',
       toast_payment_method: '支払い方法を選択してください',
     },
@@ -747,12 +863,16 @@
   function t(key, lang) {
     const l = lang || state.currentLang;
     const keys = key.split('.');
-    let val = i18n[l] || i18n['en'];
-    for (const k of keys) {
-      val = val[k];
-      if (val === undefined) return key;
+    // Try requested language first
+    let val = i18n[l];
+    if (val) {
+      for (const k of keys) { val = val[k]; if (val === undefined) break; }
+      if (val !== undefined) return val;
     }
-    return val || key;
+    // Fallback to English
+    val = i18n['en'];
+    for (const k of keys) { val = val[k]; if (val === undefined) return key; }
+    return val;
   }
 
   function tt(key, vars = {}) {
@@ -805,19 +925,28 @@
   }
 
   function renderFAQ() {
-    DOM.faqContainer.innerHTML = CONFIG.faq.map((item, i) => `
-      <div class="faq-item">
-        <button class="faq-question" data-index="${i}">
-          <span>${item.q}</span>
-          <svg class="faq-arrow" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
-          </svg>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">${item.a}</div>
+    DOM.faqContainer.innerHTML = CONFIG.faq.map((item, i) => {
+      const qKey = `faq_q${i+1}`;
+      const aKey = `faq_a${i+1}`;
+      const qText = t(qKey);
+      const aText = t(aKey);
+      // Use i18n translation if available, fall back to CONFIG.faq English text
+      const question = qText !== qKey ? qText : item.q;
+      const answer = aText !== aKey ? aText : item.a;
+      return `
+        <div class="faq-item">
+          <button class="faq-question" data-index="${i}">
+            <span>${question}</span>
+            <svg class="faq-arrow" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.39a.75.75 0 01-1.08 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">${answer}</div>
+          </div>
         </div>
-      </div>
-    `).join('');
+      `;
+    }).join('');
 
     DOM.faqContainer.querySelectorAll('.faq-question').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -1128,13 +1257,14 @@
       });
     }
 
-    // Language selection
-    DOM.langMenu?.querySelectorAll('a').forEach(a => {
+    // Language selection — both header menu and footer links
+    document.querySelectorAll('[data-lang]').forEach(a => {
       a.addEventListener('click', (e) => {
         e.preventDefault();
-        const lang = a.dataset.lang || a.getAttribute('hreflang');
+        const lang = a.dataset.lang;
         if (lang) setLanguage(lang);
-        DOM.langMenu.classList.add('hidden');
+        // Close header menu if open
+        DOM.langMenu?.classList.add('hidden');
       });
     });
 
@@ -1249,8 +1379,43 @@
   }
 
   function updatePageContent() {
-    // This updates dynamic text. Static text in HTML is pre-set.
+    const lang = state.currentLang;
+
+    // Update page <title>
+    const titleEl = document.querySelector('[data-i18n="page_title"]');
+    if (titleEl) titleEl.textContent = t('page_title');
+
+    // Update <meta> tags
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.content = t('page_desc');
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.content = t('page_title');
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.content = t('page_desc');
+    const twTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twTitle) twTitle.content = t('page_title');
+    const twDesc = document.querySelector('meta[name="twitter:description"]');
+    if (twDesc) twDesc.content = t('page_desc');
+
+    // Update all [data-i18n] elements (skip page_title — already handled)
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (!key || key === 'page_title') return;
+      if (el.dataset.i18nHtml) {
+        el.innerHTML = t(key).replace(/\n/g, '<br>');
+      } else {
+        el.textContent = t(key);
+      }
+    });
+
+    // Update [data-i18n-placeholder] elements
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      el.placeholder = t(el.dataset.i18nPlaceholder);
+    });
+
+    // Re-render dynamic sections
     renderProducts();
+    renderFAQ();
   }
 
   // ============================================
@@ -1283,8 +1448,7 @@
   function init() {
     cacheDOM();
     bindEvents();
-    renderProducts();
-    renderFAQ();
+    updatePageContent(); // calls renderProducts() + renderFAQ() internally
     generateCaptcha();
 
     // Stats animation on scroll
