@@ -1,0 +1,63 @@
+{
+  "timestamp": "2026-06-14T03:02:03.259Z",
+  "total": 5,
+  "success": 5,
+  "failed": 0,
+  "results": [
+    {
+      "id": "telegraph",
+      "name": "Telegraph (Telegram)",
+      "type": "api",
+      "description": "发布文章到 Telegraph 匿名平台",
+      "icon": "✈️",
+      "enabled": true,
+      "autoRun": true,
+      "success": true,
+      "message": "文章已发布: https://telegra.ph/Buy-ChatGPT-Plus-with-Crypto--Save-40-06-14"
+    },
+    {
+      "id": "google",
+      "name": "Google Search",
+      "type": "api",
+      "description": "通知 Google 收录网站",
+      "icon": "🌐",
+      "enabled": true,
+      "autoRun": true,
+      "success": true,
+      "message": "Google 已通知"
+    },
+    {
+      "id": "bing",
+      "name": "Bing Search",
+      "type": "api",
+      "description": "通知 Bing 收录网站",
+      "icon": "🌐",
+      "enabled": true,
+      "autoRun": true,
+      "success": true,
+      "message": "Bing 已通知"
+    },
+    {
+      "id": "yandex",
+      "name": "Yandex Search",
+      "type": "api",
+      "description": "通知 Yandex 收录（俄罗斯市场）",
+      "icon": "🌐",
+      "enabled": true,
+      "autoRun": true,
+      "success": true,
+      "message": "Yandex 已通知"
+    },
+    {
+      "id": "shorturl",
+      "name": "短链接生成",
+      "type": "api",
+      "description": "生成可追踪的短链接",
+      "icon": "🔗",
+      "enabled": true,
+      "autoRun": true,
+      "success": true,
+      "message": "短链接: https://aisubhub.pages.dev"
+    }
+  ]
+}
