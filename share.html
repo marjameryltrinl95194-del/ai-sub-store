@@ -1,31 +1,254 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8"><title>Share AISubHub</title>
-<style>body{font-family:sans-serif;max-width:600px;margin:40px auto;padding:20px;background:#0a0a12;color:#f1f1f6}
-h1{color:#a855f7}.card{background:#1a1a2e;border-radius:12px;padding:16px;margin:12px 0;border:1px solid rgba(255,255,255,0.06)}
-.card h3{margin:0 0 8px;color:#a855f7}.card p{margin:0 0 4px;color:#a0a0b8;font-size:14px}
-.btn{display:inline-block;background:linear-gradient(135deg,#7c3aed,#a855f7);color:white;padding:12px 24px;border-radius:10px;
-text-decoration:none;font-weight:600;margin:8px 4px}.btn:hover{opacity:0.9}</style></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AISubHub — Share & Promote</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, 'Segoe UI', 'PingFang SC', sans-serif; background: #0a0a12; color: #f1f1f6; padding: 20px; }
+    .container { max-width: 640px; margin: 0 auto; }
+    h1 { font-size: 1.5rem; text-align: center; padding: 30px 0 8px; background: linear-gradient(135deg, #f1f1f6, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { text-align: center; color: #a0a0b8; font-size: 0.85rem; margin-bottom: 24px; }
+    .section { background: #1a1a2e; border-radius: 12px; padding: 20px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.06); }
+    .section h2 { font-size: 1rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    .section h2 .badge { font-size: 0.7rem; background: rgba(16,185,129,0.15); color: #10b981; padding: 2px 8px; border-radius: 4px; font-weight: 500; }
+    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 18px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: none; text-decoration: none; color: white; margin: 4px 0; transition: opacity 0.2s; }
+    .btn:hover { opacity: 0.85; }
+    .btn-twitter { background: #1da1f2; }
+    .btn-producthunt { background: #da552f; }
+    .btn-copy { background: rgba(255,255,255,0.08); color: #f1f1f6; border: 1px solid rgba(255,255,255,0.1); }
+    .btn-copy:hover { background: rgba(255,255,255,0.15); }
+    .btn-reddit { background: #ff4500; }
+    .btn-hn { background: #ff6600; }
+    .btn-telegram { background: #0088cc; }
+    .tweet-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 12px 14px; margin-bottom: 8px; }
+    .tweet-card .num { display: inline-block; width: 22px; height: 22px; line-height: 22px; text-align: center; border-radius: 50%; background: rgba(29,161,242,0.15); color: #1da1f2; font-size: 0.7rem; font-weight: 700; margin-right: 6px; }
+    .tweet-card .text { color: #c8c8d8; font-size: 0.85rem; line-height: 1.6; }
+    .tweet-card .actions { margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap; }
+    .flex-wrap { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 8px; }
+    .copy-block { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 12px; margin-bottom: 10px; }
+    .copy-block p { color: #c8c8d8; font-size: 0.85rem; line-height: 1.6; white-space: pre-wrap; margin-bottom: 8px; }
+    .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: #10b981; color: white; padding: 10px 20px; border-radius: 8px; font-size: 0.85rem; opacity: 0; transition: opacity 0.3s; z-index: 100; pointer-events: none; }
+    .toast.show { opacity: 1; }
+    .quick-links { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-bottom: 20px; }
+    .label { font-size: 0.8rem; color: #a855f7; font-weight: 600; margin-bottom: 4px; }
+  </style>
+</head>
 <body>
-<h1>🚀 Share AISubHub</h1>
-<p>Copy and share these posts:</p>
-<div class="card"><h3>📱 Reddit Post</h3>
-<p>Found ChatGPT Plus for $12/mo with USDT - works on personal account</p></div>
-<div class="card"><h3>🐦 Twitter</h3>
-<p>🚀 Just found AISubHub - get ChatGPT Plus for $12/mo with crypto!
 
-✅ Personal account
-✅ USDT payment
-✅ No credentials needed
-✅ 40% off retail
+<div class="container">
+  <h1>📢 Promote AISubHub</h1>
+  <p class="subtitle">一键分享到各平台 · Click, copy, share</p>
 
-https://aisubhub.pages.dev</p></div>
-<div class="card"><h3>✈️ Telegram</h3>
-<p>🔥 用 USDT 买 ChatGPT Plus 只要 $12/月！
-👉 https://aisubhub.pages.dev
-✅ 个人账户，不是共享号
-✅ 无需密码，安全可靠
-✅ 支持 USDT TRC20/BEP20/Polygon
-✅ 充值失败全额退款</p></div>
-<a class="btn" href="https://twitter.com/intent/tweet?text=%F0%9F%9A%80%20Just%20found%20AISubHub%20-%20get%20ChatGPT%20Plus%20for%20%2412%2Fmo%20with%20crypto!%0A%0A%E2%9C%85%20Personal%20account%0A%E2%9C%85%20USDT%20payment%0A%E2%9C%85%20No%20credentials%20needed%0A%E2%9C%85%2040%25%20off%20retail%0A%0Ahttps%3A%2F%2Faisubhub.pages.dev" target="_blank">Tweet Now</a>
-<a class="btn" href="https://www.reddit.com/submit?url=https%3A%2F%2Faisubhub.pages.dev&title=Found%20ChatGPT%20Plus%20for%20%2412%2Fmo%20with%20USDT%20-%20works%20on%20personal%20account" target="_blank">Post to Reddit</a>
-</body></html>
+  <!-- Quick action bar -->
+  <div class="quick-links">
+    <a class="btn btn-twitter" href="https://twitter.com/intent/tweet?text=AISubHub%20%E2%80%94%20Premium%20AI%20Subscriptions%20at%20Wholesale%20Prices%2C%20pay%20with%20USDT%20%F0%9F%9A%80%0A%0AChatGPT%20Plus%20%2412%2Fmo%20%E2%86%92%20aisubhub.pages.dev" target="_blank">🐦 Twitter</a>
+    <a class="btn btn-reddit" href="https://www.reddit.com/r/beermoney/submit?title=Save%2040%25%20on%20ChatGPT%20Plus%20(%2420%20%E2%86%92%20%2412%2Fmo)%20by%20paying%20with%20USDT" target="_blank">🔴 Reddit</a>
+    <a class="btn btn-hn" href="https://news.ycombinator.com/submitlink?u=https://aisubhub.pages.dev&t=AISubHub%20%E2%80%94%20Buy%20AI%20Subscriptions%20with%20Crypto" target="_blank">💻 Hacker News</a>
+    <a class="btn btn-telegram" href="https://t.me/share/url?url=https://aisubhub.pages.dev&text=AISubHub%20-%20Buy%20ChatGPT%20Plus%20with%20USDT%20%2412/mo" target="_blank">✈️ Telegram</a>
+    <a class="btn btn-producthunt" href="https://www.producthunt.com/posts/new" target="_blank">🏆 Product Hunt</a>
+  </div>
+
+  <!-- ========== TWITTER THREAD ========== -->
+  <div class="section">
+    <h2>🐦 Twitter/X Thread <span class="badge">逐条发</span></h2>
+    <p style="color:#a0a0b8;font-size:0.8rem;margin-bottom:12px">每条推文点 "Tweet" 自动填好，逐条发布即可</p>
+
+    <div class="tweet-card">
+      <div class="text"><span class="num">1</span>I was paying $20/mo for ChatGPT Plus.<br><br>Then I found out you can get it for $12/mo with USDT.<br><br>Same personal account. Same features. Just cheaper.<br><br>Here's how ↓</div>
+      <div class="actions"><a class="btn btn-twitter" href="https://twitter.com/intent/tweet?text=I%20was%20paying%20%2420%2Fmo%20for%20ChatGPT%20Plus.%0A%0AThen%20I%20found%20out%20you%20can%20get%20it%20for%20%2412%2Fmo%20with%20USDT.%0A%0ASame%20personal%20account.%20Same%20features.%20Just%20cheaper.%0A%0AHere%27s%20how%20%E2%86%93" target="_blank">🐦 Tweet 1</a></div>
+    </div>
+
+    <div class="tweet-card">
+      <div class="text"><span class="num">2</span>The problem with AI subscriptions:<br>• ChatGPT Plus: $20/mo<br>• Claude Pro: $20/mo<br>• Gemini Pro: $20/mo<br><br>That's $60/mo for three services.<br><br>Or you can get all three for $36/mo total.<br><br>The trick? Wholesale pricing + crypto payment.</div>
+      <div class="actions"><a class="btn btn-twitter" href="https://twitter.com/intent/tweet?text=The%20problem%20with%20AI%20subscriptions%3A%0A%E2%80%A2%20ChatGPT%20Plus%3A%20%2420%2Fmo%0A%E2%80%A2%20Claude%20Pro%3A%20%2420%2Fmo%0A%E2%80%A2%20Gemini%20Pro%3A%20%2420%2Fmo%0A%0AThat%27s%20%2460%2Fmo%20for%20three%20services.%0A%0AOr%20you%20can%20get%20all%20three%20for%20%2436%2Fmo%20total.%0A%0AThe%20trick%3F%20Wholesale%20pricing%20%2B%20crypto%20payment." target="_blank">🐦 Tweet 2</a></div>
+    </div>
+
+    <div class="tweet-card">
+      <div class="text"><span class="num">3</span>How it works:<br><br>1️⃣ Pick your plan on AISubHub<br>2️⃣ Pay with USDT (TRC20/BEP20/Polygon)<br>3️⃣ Get redemption code by email<br>4️⃣ Redeem on your own account<br><br>No credentials needed. No shared accounts. Full refund if it fails.</div>
+      <div class="actions"><a class="btn btn-twitter" href="https://twitter.com/intent/tweet?text=How%20it%20works%3A%0A%0A1%EF%B8%8F%E2%83%83%20Pick%20your%20plan%20on%20AISubHub%0A2%EF%B8%8F%E2%83%83%20Pay%20with%20USDT%20(TRC20%2FBEP20%2FPolygon)%0A3%EF%B8%8F%E2%83%83%20Get%20redemption%20code%20by%20email%0A4%EF%B8%8F%E2%83%83%20Redeem%20on%20your%20own%20account%0A%0ANo%20credentials%20needed.%20No%20shared%20accounts.%20Full%20refund%20if%20it%20fails.%0A%0Ahttps%3A%2F%2Faisubhub.pages.dev" target="_blank">🐦 Tweet 3</a></div>
+    </div>
+
+    <div class="tweet-card">
+      <div class="text"><span class="num">4</span>Most people don't know they're overpaying for AI.<br><br>ChatGPT Pro normally $200/mo → $60 on AISubHub<br>Claude Max normally $100/mo → $60<br><br>That's not a small discount. That's bulk pricing passed to you.</div>
+      <div class="actions"><a class="btn btn-twitter" href="https://twitter.com/intent/tweet?text=Most%20people%20don%27t%20know%20they%27re%20overpaying%20for%20AI.%0A%0AChatGPT%20Pro%20normally%20%24200%2Fmo%20%E2%86%92%20%2460%20on%20AISubHub%0AClaude%20Max%20normally%20%24100%2Fmo%20%E2%86%92%20%2460%0A%0AThat%27s%20not%20a%20small%20discount.%20That%27s%20bulk%20pricing%20passed%20to%20you." target="_blank">🐦 Tweet 4</a></div>
+    </div>
+
+    <div class="tweet-card">
+      <div class="text"><span class="num">5</span>If you use AI daily, this is worth knowing.<br><br>👉 aisubhub.pages.dev<br><br>Save this thread for later 📌<br>Share with someone who uses ChatGPT.</div>
+      <div class="actions"><a class="btn btn-twitter" href="https://twitter.com/intent/tweet?text=If%20you%20use%20AI%20daily%2C%20this%20is%20worth%20knowing.%0A%0A%F0%9F%91%89%20aisubhub.pages.dev%0A%0ASave%20this%20thread%20for%20later%20%F0%9F%93%8C%0AShare%20with%20someone%20who%20uses%20ChatGPT." target="_blank">🐦 Tweet 5</a></div>
+    </div>
+  </div>
+
+  <!-- ========== ZHIHU ========== -->
+  <div class="section">
+    <h2>💡 知乎 — 回答文案</h2>
+    <p style="color:#a0a0b8;font-size:0.8rem;margin-bottom:12px">搜索"如何低价购买 ChatGPT Plus" → 点「写回答」→ 粘贴</p>
+    <div class="copy-block">
+      <div class="label">知乎回答：</div>
+      <p>**问题：如何低价购买 ChatGPT Plus/Pro？有哪些靠谱渠道？**
+
+现在用 ChatGPT 的人越来越多，但 $20/月的 Plus 和 $200/月的 Pro 对很多人来说确实不便宜。尤其是国内用户，没有境外信用卡的话，想订阅都订不了。
+
+最近发现一个叫 AISubHub 的 AI 订阅代购平台，分享一下使用体验。
+
+价格对比：
+- ChatGPT Plus 官方 $20/月 → 代购 $12/月
+- ChatGPT Pro 官方 $200/月 → 代购 $60 起
+- Claude Pro 官方 $20/月 → 代购 $12/月
+
+购买流程很简单，我买过两次，每次 5 分钟内就收到码了。
+
+安全性方面，不需要提供账号密码，收到兑换码自己激活。平台走官方渠道，充值失败全额退款。
+
+如果你已经在用 AI 工具且每月开销不小，这个平台确实能省不少钱。
+
+👉 https://aisubhub.pages.dev</p>
+      <button class="btn btn-copy" onclick="copyText(this, this.previousElementSibling.textContent)">📋 复制全文</button>
+    </div>
+  </div>
+
+  <!-- ========== V2EX ========== -->
+  <div class="section">
+    <h2>💻 V2EX — 分享发现</h2>
+    <p style="color:#a0a0b8;font-size:0.8rem;margin-bottom:12px">在「分享发现」节点发帖</p>
+    <div class="copy-block">
+      <div class="label">V2EX 帖子：</div>
+      <p>发现一个 AI 订阅代购站，ChatGPT Plus $12/月，用 USDT 支付
+
+试了两周感觉 OK，分享一下。
+
+价格：
+- ChatGPT Plus $12/mo（官方 $20）
+- ChatGPT Pro $60-$120/mo（官方 $200）
+- Claude Pro $12/mo（官方 $20）
+- Gemini Pro $12/mo（官方 $20）
+
+流程：选产品 → 付 USDT → 邮箱收兑换码 → 自己账号激活
+
+优点：
+- 不需要给账号密码，发的是兑换码
+- 个人独立账户，不是共享号
+- USDT 支付，链上可查
+- 充值失败全额退款
+
+https://aisubhub.pages.dev</p>
+      <button class="btn btn-copy" onclick="copyText(this, this.previousElementSibling.textContent)">📋 复制全文</button>
+    </div>
+  </div>
+
+  <!-- ========== PRODUCT HUNT ========== -->
+  <div class="section">
+    <h2>🏆 Product Hunt — 提交上线</h2>
+    <p style="color:#a0a0b8;font-size:0.8rem;margin-bottom:12px">点击提交，填写以下信息：</p>
+    <div style="padding:12px;background:rgba(255,255,255,0.03);border-radius:8px;font-size:0.82rem;color:#a0a0b8;line-height:1.8;margin-bottom:12px">
+      <strong style="color:#f1f1f6">Product Name:</strong> AISubHub<br>
+      <strong style="color:#f1f1f6">Tagline:</strong> Premium AI subscriptions at wholesale prices — pay with crypto<br>
+      <strong style="color:#f1f1f6">Category:</strong> AI Tools → Subscription<br>
+      <strong style="color:#f1f1f6">Website:</strong> https://aisubhub.pages.dev
+    </div>
+    <a class="btn btn-producthunt" href="https://www.producthunt.com/posts/new" target="_blank">🚀 Submit to Product Hunt</a>
+  </div>
+
+  <!-- ========== XIAOHONGSHU ========== -->
+  <div class="section">
+    <h2>📕 小红书 — 3 篇笔记</h2>
+
+    <div class="copy-block">
+      <div class="label">📕 笔记 1：省钱攻略</div>
+      <p>救命😭 ChatGPT Plus 花 $20 的冤种看过来！$12 就能搞定
+
+我找到个宝藏网站 AISubHub，用 USDT 买 Plus 只要 $12/月
+
+操作：选产品 → 付 USDT → 邮箱收码 → 自己账号激活
+
+全程不需要给密码！不用共享账号！！
+
+而且充值失败全额退款，安全感拉满🛡️
+
+Claude Pro 和 Gemini Pro 也都有
+
+每个月省 $8，一年就是 $96！！
+
+#ChatGPT #AI工具 #省钱 #加密货币</p>
+      <button class="btn btn-copy" onclick="copyText(this, this.previousElementSibling.textContent)">📋 复制笔记 1</button>
+    </div>
+
+    <div class="copy-block">
+      <div class="label">📕 笔记 2：教程</div>
+      <p>手把手教你用 USDT 买 ChatGPT Plus 📖 5 分钟搞定
+
+很多小伙伴想用 ChatGPT Plus 但嫌贵，或者没有国外信用卡
+
+Step 1️⃣ 打开 AISubHub
+Step 2️⃣ 选 ChatGPT Plus → 点购买
+Step 3️⃣ 选 USDT 支付 → 输邮箱
+Step 4️⃣ 付到显示的地址
+Step 5️⃣ 邮箱查收兑换码 → 去官网兑换 ✅
+
+全程不用给账号密码，纯个人账户！
+
+#ChatGPTPlus #USDT #加密货币 #AI教程</p>
+      <button class="btn btn-copy" onclick="copyText(this, this.previousElementSibling.textContent)">📋 复制笔记 2</button>
+    </div>
+
+    <div class="copy-block">
+      <div class="label">📕 笔记 3：对比</div>
+      <p>ChatGPT Plus 官价 vs 代购价💰谁还在原价冲？
+
+官方 $20/月 → AISubHub $12/月
+官方 Pro $200/月 → AISubHub $60 起
+
+差价这么大是因为平台批量采购
+
+✅ 便宜 40%-70%
+✅ 个人独立账户
+✅ 不用给密码
+✅ USDT 支付
+✅ 失败全额退
+
+适合人群：ChatGPT 重度用户、想省钱的打工人💼
+
+#省钱攻略 #ChatGPTPlus #AI工具推荐</p>
+      <button class="btn btn-copy" onclick="copyText(this, this.previousElementSibling.textContent)">📋 复制笔记 3</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+function copyText(btn, text) {
+  navigator.clipboard.writeText(text.trim()).then(() => {
+    btn.textContent = '✅ 已复制!';
+    btn.style.background = 'rgba(16,185,129,0.2)';
+    btn.style.color = '#10b981';
+    setTimeout(() => {
+      btn.textContent = '📋 复制全文';
+      btn.style.background = '';
+      btn.style.color = '';
+    }, 2000);
+  }).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = text.trim();
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    showToast('已复制到剪贴板');
+  });
+}
+
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._hide);
+  t._hide = setTimeout(() => t.classList.remove('show'), 2000);
+}
+</script>
+
+</body>
+</html>
