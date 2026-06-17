@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AISubHub 推广二维码</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, sans-serif; background: #0a0a12; color: #f1f1f6; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
+    .card { background: #1a1a2e; border-radius: 16px; padding: 40px; text-align: center; max-width: 420px; width: 100%; border: 1px solid rgba(255,255,255,0.06); }
+    .logo { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; }
+    .logo span { background: linear-gradient(135deg, #a855f7, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .tagline { color: #a0a0b8; margin-bottom: 24px; font-size: 0.9rem; }
+    #qrcode { margin: 0 auto 24px; width: 256px; height: 256px; background: white; padding: 16px; border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+    #qrcode canvas { max-width: 100%; max-height: 100%; }
+    .url { background: rgba(255,255,255,0.05); padding: 12px; border-radius: 8px; font-size: 0.85rem; color: #a0a0b8; word-break: break-all; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.06); }
+    .btn { display: inline-block; background: linear-gradient(135deg, #7c3aed, #a855f7); color: white; border: none; padding: 12px 24px; border-radius: 10px; font-size: 0.9rem; font-weight: 600; cursor: pointer; text-decoration: none; margin: 4px; }
+    .btn:hover { opacity: 0.9; }
+    .btn-outline { background: transparent; border: 1px solid rgba(255,255,255,0.1); color: #a0a0b8; }
+    .links { margin-top: 20px; display: flex; flex-direction: column; gap: 8px; }
+    .links a { color: #7c3aed; text-decoration: none; font-size: 0.85rem; }
+    .links a:hover { text-decoration: underline; }
+    .note { margin-top: 20px; font-size: 0.75rem; color: #555; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">⚡ <span>AISubHub</span></div>
+    <div class="tagline">Premium AI Subscriptions at Wholesale Prices</div>
+    <div id="qrcode"><div style="color:#333;font-size:0.85rem">加载中...</div></div>
+    <div class="url" id="urlDisplay">https://aisubhub.pages.dev</div>
+    <div>
+      <button class="btn" onclick="copyUrl()">📋 复制链接</button>
+      <a class="btn btn-outline" href="https://aisubhub.pages.dev" target="_blank">🌐 打开网站</a>
+    </div>
+    <div class="links">
+      <a href="https://cleanuri.com/80Bn4g" target="_blank">🔗 短链接: cleanuri.com/80Bn4g</a>
+      <a href="https://telegra.ph/Buy-ChatGPT-Plus-with-Crypto--Save-40-06-16" target="_blank">✈️ Telegraph 推广文章</a>
+    </div>
+    <div class="note">用手机扫二维码扫码打开 &middot; 分享给朋友</div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+  <script>
+    new QRCode(document.getElementById('qrcode'), {
+      text: 'https://aisubhub.pages.dev',
+      width: 220,
+      height: 220,
+      colorDark: '#1a1a2e',
+      colorLight: '#ffffff',
+      correctLevel: QRCode.CorrectLevel.H
+    });
+    function copyUrl() {
+      navigator.clipboard.writeText('https://aisubhub.pages.dev').then(() => {
+        const btn = event.target;
+        const orig = btn.textContent;
+        btn.textContent = '✅ 已复制!';
+        setTimeout(() => btn.textContent = orig, 2000);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Affiliate Dashboard — AISubHub</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .dash-page { max-width: 720px; margin: 0 auto; padding: 80px 20px 40px; }
+    .dash-page h1 { font-size: 1.5rem; margin-bottom: 24px; }
+    .dash-page .no-data { text-align: center; padding: 60px 20px; color: var(--text-tertiary); }
+    .dash-page .no-data a { color: var(--accent); }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 24px; }
+    .stat-card { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 20px; text-align: center; }
+    .stat-card .value { font-size: 1.8rem; font-weight: 700; background: linear-gradient(135deg, #7c3aed, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .stat-card .label { color: var(--text-secondary); font-size: 0.8rem; margin-top: 4px; }
+    .info-card { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 20px; margin-bottom: 16px; }
+    .info-card h3 { font-size: 0.9rem; margin-bottom: 8px; color: var(--text-secondary); }
+    .info-card .value { font-size: 0.9rem; word-break: break-all; }
+    .info-card .value a { color: var(--accent); }
+    .info-card .row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border-light); }
+    .info-card .row:last-child { border-bottom: none; }
+    .info-card .row .lbl { color: var(--text-secondary); font-size: 0.85rem; }
+    .info-card .row .val { font-size: 0.85rem; }
+    .history-empty { color: var(--text-tertiary); font-size: 0.85rem; text-align: center; padding: 20px; }
+    .btn-sm { background: var(--bg-elevated); border: 1px solid var(--border-light); color: var(--text-primary); padding: 8px 16px; border-radius: 8px; font-size: 0.8rem; cursor: pointer; display: inline-block; text-decoration: none; }
+    .btn-sm:hover { border-color: var(--accent); }
+    .btn-accent { background: linear-gradient(135deg, #7c3aed, #a855f7); color: white; border: none; padding: 10px 20px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; }
+    .btn-accent:hover { opacity: 0.9; }
+    .flex-center { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: #10b981; color: white; padding: 12px 24px; border-radius: 8px; font-size: 0.85rem; font-weight: 500; opacity: 0; transition: opacity 0.3s; z-index: 100; }
+    .toast.show { opacity: 1; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo"><span class="logo-icon">⚡</span><span>AISubHub</span></a>
+      <nav class="header-nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/affiliate" class="nav-link">Affiliate</a>
+        <a href="#" class="nav-link" style="color:var(--accent)">Dashboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="dash-page" id="dashboard">
+      <!-- Rendered dynamically -->
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="logo"><span class="logo-icon">⚡</span><span>AISubHub</span></a>
+        <p>Safe, simple, and on-chain — buy AI subscriptions with crypto.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="dashToast"></div>
+
+  <script>
+    const STORAGE_KEY = 'aisubhub_affiliate';
+
+    function getAffiliateData() {
+      try {
+        const d = localStorage.getItem(STORAGE_KEY);
+        return d ? JSON.parse(d) : null;
+      } catch { return null; }
+    }
+
+    function saveAffiliateData(data) {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch {}
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('dashToast');
+      t.textContent = msg;
+      t.classList.add('show');
+      clearTimeout(t._hide);
+      t._hide = setTimeout(() => t.classList.remove('show'), 2500);
+    }
+
+    function renderDashboard() {
+      const data = getAffiliateData();
+      const container = document.getElementById('dashboard');
+
+      if (!data) {
+        container.innerHTML = `
+          <div class="no-data">
+            <div style="font-size:2rem;margin-bottom:12px">📊</div>
+            <h2>No Affiliate Account Yet</h2>
+            <p style="margin-bottom:20px">Sign up to get your referral link and start earning!</p>
+            <a href="/affiliate" class="btn-accent">Join Affiliate Program →</a>
+          </div>
+        `;
+        return;
+      }
+
+      const estimatedPayout = data.earnings > 0 ? Math.min(data.earnings, Math.floor(data.earnings / 10) * 10) : 0;
+      const conversionRate = data.clicks > 0 ? ((data.conversions / data.clicks) * 100).toFixed(1) : '0.0';
+      const refLink = 'https://aisubhub.pages.dev/?ref=' + encodeURIComponent(data.username);
+      const clickLog = data.clickLog || [];
+      const recentClicks = clickLog.slice(-10).reverse();
+
+      container.innerHTML = `
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:24px">
+          <h1>📊 Affiliate Dashboard</h1>
+          <span style="font-size:0.8rem;color:var(--text-tertiary)">Welcome, <strong style="color:var(--text-primary)">${data.username}</strong></span>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="value">${data.clicks}</div>
+            <div class="label">Total Clicks</div>
+          </div>
+          <div class="stat-card">
+            <div class="value">${data.conversions}</div>
+            <div class="label">Conversions</div>
+          </div>
+          <div class="stat-card">
+            <div class="value">${conversionRate}%</div>
+            <div class="label">Conversion Rate</div>
+          </div>
+          <div class="stat-card">
+            <div class="value">$${data.earnings.toFixed(2)}</div>
+            <div class="label">Total Earned</div>
+          </div>
+        </div>
+
+        <!-- Referral Link -->
+        <div class="info-card">
+          <h3>🔗 Your Referral Link</h3>
+          <div class="flex-center" style="margin-top:8px">
+            <input type="text" value="${refLink}" readonly style="flex:1;min-width:200px;padding:8px 12px;border-radius:6px;border:1px solid var(--border-light);background:var(--bg-secondary);color:var(--text-primary);font-size:0.8rem">
+            <button class="btn-sm" onclick="copyToClipboard('${refLink}')">📋 Copy</button>
+          </div>
+        </div>
+
+        <!-- Account Info -->
+        <div class="info-card">
+          <h3>👤 Account</h3>
+          <div class="row">
+            <span class="lbl">Email</span>
+            <span class="val">${data.email}</span>
+          </div>
+          <div class="row">
+            <span class="lbl">USDT Wallet</span>
+            <span class="val" style="font-size:0.75rem">${data.wallet}</span>
+          </div>
+          <div class="row">
+            <span class="lbl">Joined</span>
+            <span class="val">${new Date(data.createdAt).toLocaleDateString()}</span>
+          </div>
+        </div>
+
+        <!-- Payout Info -->
+        <div class="info-card">
+          <h3>💰 Payouts</h3>
+          <div class="row">
+            <span class="lbl">Pending payout</span>
+            <span class="val" style="color:var(--accent);font-weight:600">$${data.earnings.toFixed(2)} USDT</span>
+          </div>
+          <div class="row">
+            <span class="lbl">Minimum payout</span>
+            <span class="val">$10.00</span>
+          </div>
+          <div class="row">
+            <span class="lbl">Next payout day</span>
+            <span class="val">Monday</span>
+          </div>
+          <div class="row" style="border-bottom:none;padding-top:12px">
+            <span class="lbl">Status</span>
+            <span class="val" style="color:${data.earnings >= 10 ? '#10b981' : 'var(--text-tertiary)'}">
+              ${data.earnings >= 10 ? '✅ Ready for payout' : '⏳ Need $' + (10 - data.earnings).toFixed(2) + ' more'}
+            </span>
+          </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="info-card">
+          <h3>📋 Recent Activity</h3>
+          ${recentClicks.length > 0 ? recentClicks.map(c => `
+            <div class="row">
+              <span class="lbl">${c.action === 'conversion' ? '✅ Purchase' : '👆 Click'} — ${new Date(c.time).toLocaleDateString()}</span>
+              <span class="val" style="font-size:0.75rem">${c.action === 'conversion' ? '+$' + (c.amount || 0).toFixed(2) : ''}</span>
+            </div>
+          `).join('') : '<div class="history-empty">No activity yet — share your link to start earning!</div>'}
+        </div>
+
+        <!-- Quick Links -->
+        <div class="flex-center" style="justify-content:center;margin-top:24px;gap:12px">
+          <a href="/affiliate" class="btn-sm">📦 Promo Materials</a>
+          <a href="/" class="btn-sm">🏠 Back to Store</a>
+        </div>
+      `;
+    }
+
+    // Update click stats from app.js tracking
+    function syncClickStats() {
+      const data = getAffiliateData();
+      if (!data) return;
+      // Check for ref clicks stored by app.js
+      try {
+        const refClicks = localStorage.getItem('aisubhub_ref_clicks');
+        if (refClicks) {
+          const clicks = JSON.parse(refClicks);
+          data.clicks = clicks.length;
+          data.clickLog = clicks;
+          saveAffiliateData(data);
+        }
+      } catch {}
+    }
+
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('✅ Copied to clipboard!');
+      }).catch(() => {
+        showToast('Click to copy');
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      syncClickStats();
+      renderDashboard();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AISubHub 推广控制台</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,system-ui,sans-serif;background:#0a0a12;color:#f1f1f6;padding:20px;max-width:700px;margin:0 auto}
+h1{font-size:1.2rem;margin-bottom:4px;background:linear-gradient(135deg,#f1f1f6,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{color:#6b6b85;font-size:0.8rem;margin-bottom:16px}
+.card{background:#1a1a2e;border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:14px 16px;margin-bottom:10px;display:flex;align-items:center;gap:12px}
+.card-icon{font-size:1.3rem;width:32px;text-align:center}
+.card-info{flex:1}
+.card-info h3{font-size:0.9rem;font-weight:600}
+.card-info p{font-size:0.75rem;color:#6b6b85}
+.card-status{font-size:0.7rem;padding:3px 10px;border-radius:10px;font-weight:600}
+.status-pending{background:rgba(245,158,11,0.15);color:#f59e0b}
+.status-success{background:rgba(16,185,129,0.15);color:#10b981}
+.status-failed{background:rgba(239,68,68,0.15);color:#ef4444}
+.status-manual{background:rgba(99,102,241,0.15);color:#6366f1}
+.btn{padding:8px 20px;border-radius:8px;border:none;font-weight:600;cursor:pointer;font-size:0.85rem;font-family:inherit;transition:all 0.2s}
+.btn-primary{background:linear-gradient(135deg,#7c3aed,#a855f7);color:white}
+.btn-primary:hover{opacity:0.9}
+.btn-link{background:#1e1e2e;color:#a0a0b8;border:1px solid #333;text-decoration:none;display:inline-block;padding:6px 14px;border-radius:8px;font-size:0.75rem}
+.btn-link:hover{border-color:#7c3aed}
+.btn:disabled{opacity:0.4;cursor:not-allowed}
+#log{background:#0a0a12;border-radius:8px;padding:12px;font-size:0.75rem;color:#6b6b85;line-height:1.6;max-height:200px;overflow-y:auto;white-space:pre-wrap;margin-top:12px;border:1px solid rgba(255,255,255,0.06)}
+#log .ok{color:#10b981}#log .fail{color:#ef4444}#log .info{color:#a855f7}
+.action-bar{display:flex;gap:8px;margin-bottom:16px}
+</style>
+</head>
+<body>
+
+<h1>⚡ AISubHub 推广控制台</h1>
+<p class="sub">站点: <span id="siteUrl">https://aisubhub.pages.dev</span></p>
+
+<div class="action-bar">
+  <button class="btn btn-primary" id="runBtn" onclick="runAll()">▶ 运行全部自动推广</button>
+  <button class="btn btn-link" onclick="location.reload()">🔄 刷新</button>
+</div>
+
+<div id="channels"></div>
+
+<div id="log">📝 日志将显示在这里...</div>
+
+<script>
+const API = '';
+
+async function loadStatus() {
+  try {
+    const res = await fetch(API + '/api/status');
+    const data = await res.json();
+    document.getElementById('siteUrl').textContent = data.siteUrl;
+    renderChannels(data.channels, data.results);
+  } catch(e) {
+    document.getElementById('log').innerHTML += `\n❌ 连接失败: ${e.message}`;
+  }
+}
+
+function renderChannels(channels, results) {
+  const container = document.getElementById('channels');
+  container.innerHTML = channels.map(ch => {
+    const result = results?.find(r => r.id === ch.id);
+    let status = ch.autoRun ? 'pending' : 'manual';
+    let statusText = ch.autoRun ? '待运行' : '手动发布';
+    if (result) {
+      status = result.success ? 'success' : 'failed';
+      statusText = result.success ? '✅ 成功' : '❌ 失败';
+    }
+
+    return `<div class="card">
+      <div class="card-icon">${ch.icon}</div>
+      <div class="card-info">
+        <h3>${ch.name}</h3>
+        <p>${ch.description}</p>
+      </div>
+      <div>
+        <span class="card-status status-${status}">${statusText}</span>
+        ${!ch.autoRun && ch.url ? `<br><a href="${ch.url}" target="_blank" class="btn-link" style="margin-top:4px">打开</a>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+async function runAll() {
+  const btn = document.getElementById('runBtn');
+  btn.disabled = true;
+  btn.textContent = '⏳ 运行中...';
+  const log = document.getElementById('log');
+  log.innerHTML = '';
+
+  try {
+    const res = await fetch(API + '/api/run', { method: 'POST' });
+    const data = await res.json();
+    log.innerHTML = data.results.map(r =>
+      `${r.success ? '✅' : '❌'} ${r.icon} ${r.name}: ${r.message || r.status}`
+    ).join('\n') + '\n\n📋 手动渠道已列在上方，点击"打开"按钮发布';
+    renderChannels(data.results.map(r => {
+      const ch = channelsData.find(c => c.id === r.id);
+      return { ...ch, ...r };
+    }), data.results);
+  } catch(e) {
+    log.innerHTML = `❌ 错误: ${e.message}`;
+  }
+
+  btn.disabled = false;
+  btn.textContent = '▶ 运行全部自动推广';
+}
+
+// Initial load
+const channelsData = [];
+loadStatus();
+</script>
+</body>
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AISubHub 中文推广文案总览</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #0a0a12; color: #f1f1f6; padding: 20px; }
+    .header { text-align: center; padding: 40px 0 20px; }
+    .header h1 { font-size: 1.5rem; background: linear-gradient(135deg, #a855f7, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .header p { color: #a0a0b8; margin-top: 8px; font-size: 0.9rem; }
+    .platform-tabs { display: flex; gap: 8px; justify-content: center; margin: 24px 0; flex-wrap: wrap; }
+    .platform-tab { padding: 10px 20px; border-radius: 10px; border: none; cursor: pointer; font-weight: 600; font-size: 0.9rem; background: rgba(255,255,255,0.05); color: #a0a0b8; transition: all 0.2s; }
+    .platform-tab:hover { background: rgba(255,255,255,0.1); }
+    .platform-tab.active { background: linear-gradient(135deg, #7c3aed, #a855f7); color: white; }
+    .content { max-width: 720px; margin: 0 auto; }
+    .post { display: none; background: #1a1a2e; border-radius: 12px; padding: 24px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.06); }
+    .post.active { display: block; }
+    .post-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; gap: 12px; }
+    .post-title { font-size: 1rem; font-weight: 600; line-height: 1.5; flex: 1; }
+    .post-type { font-size: 0.75rem; padding: 3px 8px; border-radius: 6px; white-space: nowrap; }
+    .post-type.save { background: rgba(16,185,129,0.15); color: #10b981; }
+    .post-type.tutorial { background: rgba(59,130,246,0.15); color: #3b82f6; }
+    .post-type.compare { background: rgba(245,158,11,0.15); color: #f59e0b; }
+    .post-type.analysis { background: rgba(139,92,246,0.15); color: #8b5cf6; }
+    .post-type.share { background: rgba(236,72,153,0.15); color: #ec4899; }
+    .post-type.qa { background: rgba(16,185,129,0.15); color: #10b981; }
+    .post-type.tech { background: rgba(59,130,246,0.15); color: #3b82f6; }
+    .copy-btn { background: rgba(255,255,255,0.08); border: none; color: #a0a0b8; padding: 6px 14px; border-radius: 8px; font-size: 0.8rem; cursor: pointer; white-space: nowrap; font-weight: 500; }
+    .copy-btn:hover { background: rgba(255,255,255,0.15); color: white; }
+    .copy-btn.copied { background: rgba(16,185,129,0.2); color: #10b981; }
+    pre { white-space: pre-wrap; word-wrap: break-word; font-family: inherit; font-size: 0.85rem; line-height: 1.8; color: #c8c8d8; }
+    .note { max-width: 720px; margin: 20px auto; font-size: 0.8rem; color: #555; text-align: center; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 20px; }
+    .note a { color: #a855f7; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📢 AISubHub 中文推广文案</h1>
+  <p>点击右上角复制按钮，一键复制全文到对应平台发布</p>
+</div>
+
+<div class="platform-tabs">
+  <button class="platform-tab active" onclick="switchPlatform('xiaohongshu')">📕 小红书</button>
+  <button class="platform-tab" onclick="switchPlatform('zhihu')">💡 知乎</button>
+  <button class="platform-tab" onclick="switchPlatform('v2ex')">💻 V2EX</button>
+</div>
+
+<div class="content">
+
+<!-- ========== 小红书 ========== -->
+<div id="xiaohongshu-posts" class="platform-content active">
+
+  <div class="post active">
+    <div class="post-header">
+      <div class="post-title">💰 笔记 1：省钱攻略型</div>
+      <span style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">
+        <span class="post-type save">省钱</span>
+        <button class="copy-btn" onclick="copyPost(this, 'xhs-1')">📋 复制</button>
+      </span>
+    </div>
+    <pre id="xhs-1">**标题：救命😭 ChatGPT Plus 花 $20 的冤种看过来！$12 就能搞定**
+
+家人们谁懂啊！！原来 ChatGPT Plus 不用花 20 刀😱
+
+我找到个宝藏网站 AISubHub，用 USDT 买 Plus 只要 $12/月，Pro 也才 $60🔥
+
+👉 怎么操作？
+1️⃣ 打开网站选 ChatGPT Plus
+2️⃣ 付 USDT（TRC20/BEP20 都行）
+3️⃣ 邮箱收兑换码
+4️⃣ 用自己的账号兑换激活
+
+全程不需要给密码！不用共享账号！！自己账户自己用🔒
+
+而且充值失败全额退款，安全感拉满🛡️
+
+Claude Pro 和 Gemini Pro 也都有，都是一样的低价
+
+真的后悔没早点发现😭 每个月省 $8，一年就是 $96 啊！！
+
+**#ChatGPT #AI工具 #省钱 #加密货币 #宝藏网站**
+
+👉 https://aisubhub.pages.dev</pre>
+  </div>
+
+  <div class="post active">
+    <div class="post-header">
+      <div class="post-title">📖 笔记 2：教程型</div>
+      <span style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">
+        <span class="post-type tutorial">教程</span>
+        <button class="copy-btn" onclick="copyPost(this, 'xhs-2')">📋 复制</button>
+      </span>
+    </div>
+    <pre id="xhs-2">**标题：手把手教你用 USDT 买 ChatGPT Plus 📖 5 分钟搞定**
+
+很多小伙伴想用 ChatGPT Plus 但嫌 $20/月太贵，或者没有国外信用卡💳
+
+今天分享一个超简单的方法，用 USDT 买只要 $12/月👇
+
+📌 准备：有点 USDT（TRC20/BEP20 都行）
+
+Step 1️⃣ 打开 AISubHub
+Step 2️⃣ 选 ChatGPT Plus → 点购买
+Step 3️⃣ 选 USDT 支付 → 输邮箱
+Step 4️⃣ 付到显示的地址（15 分钟内）
+Step 5️⃣ 邮箱查收兑换码 → 去官网兑换 ✅
+
+全程不用给账号密码，纯个人账户，不是共享号！
+
+Claude Pro、Gemini Pro 也一样能买，价格都是批发价💰
+
+有问题评论区问，看到就回～
+
+**#ChatGPTPlus #USDT #加密货币 #AI教程 #干货分享**
+
+👉 https://aisubhub.pages.dev</pre>
+  </div>
+
+  <div class="post active">
+    <div class="post-header">
+      <div class="post-title">💰 笔记 3：对比型</div>
+      <span style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">
+        <span class="post-type compare">对比</span>
+        <button class="copy-btn" onclick="copyPost(this, 'xhs-3')">📋 复制</button>
+      </span>
+    </div>
+    <pre id="xhs-3">**标题：ChatGPT Plus 官价 vs 代购价💰谁还在原价冲？**
+
+ChatGPT Plus 官方 $20/月 → AISubHub $12/月
+ChatGPT Pro 官方 $200/月 → AISubHub $60 起
+Claude Pro 官方 $20/月 → AISubHub $12/月
+
+差价这么大是因为平台批量采购，把优惠直接让给用户👍
+
+💡 优势总结：
+✅ 便宜 40%-70%
+✅ 个人独立账户
+✅ 不用给密码
+✅ USDT 支付
+✅ 失败全额退
+
+缺点：需要用加密货币付款，没有 USDT 的话要先买一点～
+
+适合人群：ChatGPT 重度用户、Claude 用户、想省钱的打工人💼
+
+**#省钱攻略 #ChatGPTPlus #Claude #AI工具推荐 #加密货币**
+
+👉 https://aisubhub.pages.dev</pre>
+  </div>
+
+</div>
+
+<!-- ========== 知乎 ========== -->
+<div id="zhihu-posts" class="platform-content">
+
+  <div class="post active">
+    <div class="post-header">
+      <div class="post-title">💡 回答 1：如何低价购买 ChatGPT Plus/Pro？</div>
+      <span style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">
+        <span class="post-type tutorial">攻略</span>
+        <button class="copy-btn" onclick="copyPost(this, 'zhihu-1')">📋 复制</button>
+      </span>
+    </div>
+    <pre id="zhihu-1">**问题：如何低价购买 ChatGPT Plus/Pro？有哪些靠谱渠道？**
+
+现在用 ChatGPT 的人越来越多，但 $20/月的 Plus 和 $200/月的 Pro 对很多人来说确实不便宜。尤其是国内用户，没有境外信用卡的话，想订阅都订不了。
+
+最近发现一个叫 AISubHub 的 AI 订阅代购平台，分享一下使用体验。
+
+### 价格对比
+
+| 产品 | 官方价格 | AISubHub 价格 | 折扣 |
+|------|---------|--------------|------|
+| ChatGPT Plus | $20/月 | $12/月 | 省 40% |
+| ChatGPT Pro | $200/月 | $60-$120/月 | 省 40%-70% |
+| Claude Pro | $20/月 | $12/月 | 省 40% |
+| Claude Max | $100/月 | $60/月 | 省 40% |
+| Gemini Pro | $20/月 | $12/月 | 省 40% |
+
+### 购买流程
+
+流程非常简单，我买过两次，每次 5 分钟内就收到码了：
+
+1. 打开 AISubHub，选你要的产品
+2. 选择支付方式（支持 USDT TRC20 / BEP20 / Polygon）
+3. 输入接收邮箱
+4. 输入验证码，确认订单
+5. 将对应金额的 USDT 转到显示的地址
+6. 等待链上确认 → 邮箱收到兑换码
+7. 用你自己的 OpenAI/Anthropic/Google 账号兑换激活
+
+### 安全性分析
+
+这是大家最关心的问题。我的看法：
+
+**不需要提供账号密码** — 这是最大的安全保障。你收到的是官方 Gift Card 或充值码，用自己的账号兑换即可。平台全程接触不到你的账号。
+
+**官方渠道充值** — 平台走的是官方礼品卡和企业渠道，不是黑产手段。如果充值失败，承诺全额退款。
+
+**加密货币支付** — 链上交易可查，不可篡改，比信用卡更保护隐私。
+
+### 适合谁？
+
+- ChatGPT/Claude 的重度用户
+- 没有境外信用卡的国内用户
+- 想省钱的个人用户
+- 需要批量采购的团队
+
+### 注意事项
+
+1. 需要有 USDT（可以在欧易/币安购买）
+2. 支付后有 15 分钟时限，建议先转好账再操作
+3. 建议选 TRC20 网络，手续费低、到账快
+
+### 总结
+
+如果你已经在用 AI 工具且每月开销不小，这个平台确实能省不少钱。全流程不需要提供密码，安全方面可以放心。建议先买一个月试试，体验没问题再长期使用。
+
+👉 https://aisubhub.pages.dev</pre>
+  </div>
+
+  <div class="post active">
+    <div class="post-header">
+      <div class="post-title">🔍 回答 2：AI 订阅代购靠谱吗？怎么判断？</div>
+      <span style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">
+        <span class="post-type analysis">分析</span>
+        <button class="copy-btn" onclick="copyPost(this, 'zhihu-2')">📋 复制</button>
+      </span>
+    </div>
+    <pre id="zhihu-2">**问题：AI 订阅代购靠谱吗？怎么判断一个代购平台是否可信？**
+
+随着 ChatGPT、Claude、Gemini 的普及，AI 订阅代购这个市场确实在快速增长。但市面上的代购鱼龙混杂，我总结几个判断标准：
+
+### 1. 是否需要账号密码
+**靠谱的平台不需要。** 正规代购是通过 Gift Card 或企业充值码完成的，你把码兑换到自己账号上就行。任何要你提供 OpenAI/Google 账号密码的，建议直接拉黑。
+
+### 2. 支付方式
+支持加密货币支付的平台通常更靠谱，因为链上交易可追溯。而且 crypto 支付天然适合跨境小额交易，手续费低。
+
+### 3. 退款保障
+敢承诺"充值失败全额退款"的平台，至少说明他们有信心能完成充值。
+
+### 4. 售后服务
+有在线客服/工单系统的平台更值得信赖。
+
+### AISubHub 实测
+
+按上面标准，我测了 AISubHub：
+
+✅ 不需要账号密码 — 邮箱收码，自己兑换
+✅ USDT 支付 — TRC20/BEP20/Polygon 都支持
+✅ 全额退款 — 页面明确写了
+✅ 有在线客服弹窗
+
+价格方面确实便宜：ChatGPT Plus 只要 $12/月（官价 $20），Pro 版 $60 起（官价 $200）。
+
+买了两次，到账速度还行，第一次 3 分钟，第二次 5 分钟。
+
+### 给新手的建议
+
+1. 先买一个月试试水，别一上来就冲年付
+2. 用 TRC20 转账，到账最快
+3. 保留好交易哈希，万一需要退款用得着
+4. 注意 15 分钟支付时限
+
+总体来说，AISubHub 在目前市面上的代购里算是比较正规的一个。当然任何建议都要你自己判断，我只是提供参考。
+
+👉 https://aisubhub.pages.dev</pre>
+  </div>
+
+</div>
+
+<!-- ========== V2EX ========== -->
+<div id="v2ex-posts" class="platform-content">
+
+  <div class="post active">
+    <div class="post-header">
+      <div class="post-title">🚀 帖子 1：分享发现 — AI 订阅代购站</div>
+      <span style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">
+        <span class="post-type share">分享</span>
+        <button class="copy-btn" onclick="copyPost(this, 'v2ex-1')">📋 复制</button>
+      </span>
+    </div>
+    <pre id="v2ex-1">**标题：发现一个 AI 订阅代购站，ChatGPT Plus $12/月，用 USDT 支付**
+
+V 友们好，
+
+分享一个最近发现的 AI 订阅代购平台 AISubHub（https://aisubhub.pages.dev），试了两周感觉 OK，分享一下。
+
+**价格：**
+- ChatGPT Plus $12/mo（官方 $20）
+- ChatGPT Pro $60-$120/mo（官方 $200）
+- Claude Pro $12/mo（官方 $20）
+- Gemini Pro $12/mo（官方 $20）
+
+**流程：**
+选产品 → 付 USDT（TRC20/BEP20/Polygon）→ 邮箱收兑换码 → 自己账号激活
+
+**优点：**
+- 不需要给账号密码，发的是兑换码
+- 个人独立账户，不是共享/镜像号
+- USDT 支付，链上可查
+- 充值失败全额退款
+
+**缺点：**
+- 需要自己有 USDT
+- 支付有 15 分钟时限
+- 纯前端页面，没有后端账号系统（不过对于一次性购买来说问题不大）
+
+我买了一次 Plus 一次 Pro，到账速度都在 5 分钟内。整体体验还行。
+
+有需要的 V 友可以试试，有什么问题楼下交流。</pre>
+  </div>
+
+  <div class="post active">
+    <div class="post-header">
+      <div class="post-title">💬 帖子 2：问与答 — 大家在用什么方式买 ChatGPT Plus？</div>
+      <span style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">
+        <span class="post-type qa">讨论</span>
+        <button class="copy-btn" onclick="copyPost(this, 'v2ex-2')">📋 复制</button>
+      </span>
+    </div>
+    <pre id="v2ex-2">**标题：大家在用什么方式买 ChatGPT Plus？**
+
+最近 Plus 涨价到 $20 了，Pro 更是 $200/月，个人用有点肉疼。
+
+试了几个渠道：
+1. 官方直接订阅 — 需要境外信用卡，Pass
+2. 淘宝代充 — 不太放心账号安全
+3. 拼车 — 怕被封
+4. AISubHub（https://aisubhub.pages.dev）— 用 USDT 买 Gift Card 自己兑，$12/月
+
+目前用的 4，体验还可以。有 V 友也在用这个吗？或者有其他推荐？
+
+**补充：** 纯分享，非广告。用过的来聊聊体验。</pre>
+  </div>
+
+  <div class="post active">
+    <div class="post-header">
+      <div class="post-title">⚙️ 帖子 3：技术向 — 技术架构分享</div>
+      <span style="display:flex;gap:6px;flex-wrap:wrap;align-items:center">
+        <span class="post-type tech">技术</span>
+        <button class="copy-btn" onclick="copyPost(this, 'v2ex-3')">📋 复制</button>
+      </span>
+    </div>
+    <pre id="v2ex-3">**标题：搞了个 AI 订阅代购站的技术架构分享**
+
+分享一下我搭 AI 订阅代购站（AISubHub）的技术栈，给想入行的参考：
+
+**前端：**
+- 纯 HTML + CSS + JS，零框架
+- 暗色紫色主题，响应式设计
+- 8 国语言（data-i18n 属性驱动，含阿拉伯语 RTL）
+- 部署在 Cloudflare Pages
+
+**支付：**
+- USDT TRC20 / BEP20 / Polygon
+- 链上交易验证（人工确认后发货）
+
+**产品：**
+- ChatGPT Plus / Pro
+- Claude Pro / Max
+- Gemini Pro
+
+**值得分享的点：**
+1. 多语言用 data-i18n 属性 + 一个 i18n 对象实现，比引入框架轻量很多
+2. 支付流程是类 Web3 风格 — 展示地址 → 用户转账 → 链上确认 → 发卡
+3. 纯静态部署，零后端成本，适合 MVP 验证
+
+**踩过的坑：**
+- captcha 要在服务端做才对，纯前端验证码等于没有（当前方案仅供展示）
+- 支付地址展示期 15 分钟倒计时
+
+有什么问题欢迎交流。
+
+**仓库：** https://github.com/marjameryltrinl95194-del/ai-sub-store
+**网站：** https://aisubhub.pages.dev</pre>
+  </div>
+
+</div>
+
+</div>
+
+<div class="note">
+  <a href="https://aisubhub.pages.dev" target="_blank">🌐 AISubHub 官网</a>
+  &nbsp;·&nbsp;
+  <a href="https://telegra.ph/Buy-ChatGPT-Plus-with-Crypto--Save-40-06-16" target="_blank">✈️ Telegraph 英文推广文</a>
+  &nbsp;·&nbsp;
+  <a href="../promo-qr.html" target="_blank">📱 二维码分享</a>
+</div>
+
+<script>
+function switchPlatform(name) {
+  document.querySelectorAll('.platform-tab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.platform-content').forEach(c => c.classList.remove('active'));
+  document.getElementById(name + '-posts').classList.add('active');
+}
+
+function copyPost(btn, id) {
+  const text = document.getElementById(id).textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = '✅ 已复制';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '📋 复制'; btn.classList.remove('copied'); }, 2000);
+  }).catch(() => {
+    // Fallback
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+    btn.textContent = '✅ 已复制';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '📋 复制'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+</script>
+
+</body>
+</html>

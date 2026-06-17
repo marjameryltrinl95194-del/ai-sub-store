@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AISubHub Affiliate Program — Earn 10% Commission</title>
+  <meta name="description" content="Join AISubHub affiliate program and earn 10% commission on every referral. Promote AI subscriptions and earn crypto.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://aisubhub.pages.dev/affiliate">
+  <meta property="og:title" content="AISubHub Affiliate Program — Earn 10% Recurring Commission">
+  <meta property="og:description" content="Earn USDT commission by referring friends to AISubHub. 10% on every sale.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .affiliate-page { max-width: 720px; margin: 0 auto; padding: 80px 20px 40px; }
+    .affiliate-page h1 { font-size: 2rem; margin-bottom: 8px; background: linear-gradient(135deg, #f1f1f6 0%, #a855f7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .affiliate-page .subtitle { color: var(--text-tertiary); margin-bottom: 32px; font-size: 0.95rem; }
+    .commissions { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 32px; }
+    .commission-card { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 20px; text-align: center; }
+    .commission-card .rate { font-size: 2rem; font-weight: 700; background: linear-gradient(135deg, #7c3aed, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .commission-card .label { color: var(--text-secondary); font-size: 0.85rem; margin-top: 4px; }
+    .commission-card .desc { color: var(--text-tertiary); font-size: 0.75rem; margin-top: 8px; }
+    .steps { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+    .step { display: flex; gap: 16px; align-items: flex-start; background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 16px 20px; }
+    .step-num { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #7c3aed, #a855f7); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; flex-shrink: 0; }
+    .step-text { flex: 1; }
+    .step-text h3 { font-size: 0.95rem; margin-bottom: 4px; }
+    .step-text p { color: var(--text-secondary); font-size: 0.85rem; margin: 0; line-height: 1.5; }
+    .signup-section { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-md); padding: 24px; margin-bottom: 32px; }
+    .signup-section h2 { font-size: 1.1rem; margin-bottom: 16px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 6px; }
+    .form-group input { width: 100%; padding: 10px 14px; border-radius: 8px; border: 1px solid var(--border-light); background: var(--bg-secondary); color: var(--text-primary); font-size: 0.9rem; }
+    .form-group input:focus { outline: none; border-color: var(--accent); }
+    .referral-box { display: none; background: rgba(124,58,237,0.08); border: 1px solid rgba(124,58,237,0.2); border-radius: var(--radius-md); padding: 20px; margin-top: 16px; }
+    .referral-box.visible { display: block; }
+    .referral-box .link { display: flex; gap: 8px; align-items: center; margin-top: 8px; }
+    .referral-box .link input { flex: 1; padding: 10px 14px; border-radius: 8px; border: 1px solid var(--border-light); background: var(--bg-secondary); color: var(--text-primary); font-size: 0.85rem; cursor: text; }
+    .submit-btn { background: linear-gradient(135deg, #7c3aed, #a855f7); color: white; border: none; padding: 12px 24px; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer; width: 100%; }
+    .submit-btn:hover { opacity: 0.9; }
+    .copy-btn-sm { background: var(--bg-elevated); border: 1px solid var(--border-light); color: var(--text-primary); padding: 8px 16px; border-radius: 8px; font-size: 0.8rem; cursor: pointer; white-space: nowrap; }
+    .copy-btn-sm:hover { border-color: var(--accent); }
+    .faq-item { border-bottom: 1px solid var(--border-light); padding: 16px 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-item h3 { font-size: 0.9rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .faq-item h3 .toggle { color: var(--text-tertiary); transition: transform 0.2s; }
+    .faq-item.open h3 .toggle { transform: rotate(45deg); }
+    .faq-item p { display: none; color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; margin-top: 8px; }
+    .faq-item.open p { display: block; }
+    .dashboard-link { text-align: center; margin-top: 24px; padding: 16px; background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-md); }
+    .dashboard-link a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    .dashboard-link a:hover { text-decoration: underline; }
+    .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: #10b981; color: white; padding: 12px 24px; border-radius: 8px; font-size: 0.85rem; font-weight: 500; opacity: 0; transition: opacity 0.3s; z-index: 100; }
+    .toast.show { opacity: 1; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="/" class="logo"><span class="logo-icon">⚡</span><span>AISubHub</span></a>
+      <nav class="header-nav">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/affiliate" class="nav-link" style="color:var(--accent)">Affiliate</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="affiliate-page">
+
+      <h1>🤝 AISubHub Affiliate Program</h1>
+      <p class="subtitle">Share AI subscriptions with your audience and earn 10% commission on every sale — paid in USDT.</p>
+
+      <!-- Commission Rates -->
+      <div class="commissions">
+        <div class="commission-card">
+          <div class="rate">10%</div>
+          <div class="label">Commission per Sale</div>
+          <div class="desc">Earn 10% on every order your referral makes</div>
+        </div>
+        <div class="commission-card">
+          <div class="rate">$1.20</div>
+          <div class="label">Per ChatGPT Plus Sale</div>
+          <div class="desc">You earn $1.20 for each $12 plan</div>
+        </div>
+        <div class="commission-card">
+          <div class="rate">$6.00</div>
+          <div class="label">Per ChatGPT Pro Sale</div>
+          <div class="desc">You earn $6.00 for each $60 plan</div>
+        </div>
+        <div class="commission-card">
+          <div class="rate">30 days</div>
+          <div class="label">Cookie Duration</div>
+          <div class="desc">Referral tracked for 30 days</div>
+        </div>
+      </div>
+
+      <!-- How It Works -->
+      <h2 style="margin-bottom:16px">How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div class="step-text">
+            <h3>Sign Up</h3>
+            <p>Enter your details below to get your unique referral link.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div class="step-text">
+            <h3>Share Your Link</h3>
+            <p>Post your referral link on social media, blogs, Telegram, YouTube, or anywhere your audience is.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div class="step-text">
+            <h3>Earn Commission</h3>
+            <p>When someone clicks your link and makes a purchase within 30 days, you earn 10% commission — paid in USDT.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sign Up / Referral Link Generator -->
+      <div class="signup-section" id="signupSection">
+        <h2>🔗 Get Your Referral Link</h2>
+
+        <div class="form-group">
+          <label for="affName">Your Name or ID (used in your referral link)</label>
+          <input type="text" id="affName" placeholder="e.g. yourname or Telegram @username" maxlength="30" pattern="[a-zA-Z0-9_]+">
+        </div>
+        <div class="form-group">
+          <label for="affEmail">Your Email (to receive commission payouts)</label>
+          <input type="email" id="affEmail" placeholder="you@example.com">
+        </div>
+        <div class="form-group">
+          <label for="affUSDT">Your USDT (TRC20) Wallet Address (for commission payouts)</label>
+          <input type="text" id="affUSDT" placeholder="TLa... your USDT receiving address" maxlength="64">
+        </div>
+
+        <button class="submit-btn" id="generateLinkBtn">🚀 Generate My Referral Link</button>
+
+        <div class="referral-box" id="referralResult">
+          <h3>✅ Your Referral Link Is Ready!</h3>
+          <p style="font-size:0.85rem;color:var(--text-secondary);margin-top:4px">Share this link — you earn 10% on every purchase from your referrals.</p>
+          <div class="link">
+            <input type="text" id="referralLink" readonly>
+            <button class="copy-btn-sm" id="copyRefLink">📋 Copy</button>
+          </div>
+          <div style="font-size:0.8rem;color:var(--text-tertiary);margin-top:12px">
+            <span id="affStats">0 clicks • 0 conversions • $0.00 earned</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Promo Materials -->
+      <h2 style="margin-bottom:12px">📦 Promo Materials</h2>
+      <p style="color:var(--text-secondary);font-size:0.85rem;margin-bottom:16px">Pre-written posts you can copy and share:</p>
+
+      <div class="steps" style="gap:8px">
+        <div class="step" style="cursor:pointer" onclick="copyText(this, '🇺🇸 English: Get ChatGPT Plus for just $12/mo with crypto! Save 40% and pay with USDT. No credentials needed.\n👉 ' + getRefLink() + '\n\n#ChatGPT #AI #Crypto')">
+          <span style="font-size:1.2rem">🇺🇸</span>
+          <div class="step-text">
+            <p>English promo — click to copy</p>
+          </div>
+        </div>
+        <div class="step" style="cursor:pointer" onclick="copyText(this, '🇨🇳 中文: ChatGPT Plus 只要 $12/月！用 USDT 买，省 40%。个人账户，无需密码。\n👉 ' + getRefLink())">
+          <span style="font-size:1.2rem">🇨🇳</span>
+          <div class="step-text">
+            <p>中文推广 — 点击复制</p>
+          </div>
+        </div>
+        <div class="step" style="cursor:pointer" onclick="copyText(this, '🇷🇺 Русский: ChatGPT Plus всего $12/мес с криптовалютой! Экономьте 40%.\n👉 ' + getRefLink())">
+          <span style="font-size:1.2rem">🇷🇺</span>
+          <div class="step-text">
+            <p>Русский — нажмите, чтобы скопировать</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <h2 style="margin:32px 0 16px">FAQ</h2>
+      <div class="faq-section-custom">
+        <div class="faq-item open">
+          <h3 onclick="toggleFaq(this)">How and when do I get paid? <span class="toggle">+</span></h3>
+          <p>Commissions are paid in USDT (TRC20) to your provided wallet address. Payouts are processed weekly on Mondays for all confirmed sales from the previous week. Minimum payout: $10.</p>
+        </div>
+        <div class="faq-item">
+          <h3 onclick="toggleFaq(this)">What counts as a valid referral? <span class="toggle">+</span></h3>
+          <p>A referral is counted when someone clicks your unique link and makes a purchase within 30 days. The 30-day cookie is stored in their browser. If they clear their cookies, the referral may not be tracked.</p>
+        </div>
+        <div class="faq-item">
+          <h3 onclick="toggleFaq(this)">What products can I promote? <span class="toggle">+</span></h3>
+          <p>All products on AISubHub: ChatGPT Plus/Pro, Claude Pro/Max, and Gemini Pro. Commission is 10% regardless of which product the referral purchases.</p>
+        </div>
+        <div class="faq-item">
+          <h3 onclick="toggleFaq(this)">Can I promote on any platform? <span class="toggle">+</span></h3>
+          <p>Yes! Social media, YouTube, blogs, Telegram, Discord, Twitter/X, Reddit — anywhere your audience is. Just avoid spam and follow each platform's guidelines.</p>
+        </div>
+        <div class="faq-item">
+          <h3 onclick="toggleFaq(this)">How do I track my referrals? <span class="toggle">+</span></h3>
+          <p>Visit your <a href="affiliate-dashboard" style="color:var(--accent)">Affiliate Dashboard</a> to see real-time stats: clicks, conversions, and estimated earnings.</p>
+        </div>
+      </div>
+
+      <!-- Dashboard link -->
+      <div class="dashboard-link">
+        📊 <a href="affiliate-dashboard">Go to your Affiliate Dashboard →</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="/" class="logo"><span class="logo-icon">⚡</span><span>AISubHub</span></a>
+        <p>Safe, simple, and on-chain — buy AI subscriptions with crypto.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Links</h4>
+        <a href="/">Home</a>
+        <a href="/affiliate">Affiliate Program</a>
+        <a href="/affiliate-dashboard">Dashboard</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="affToast"></div>
+
+  <script>
+    // --- Affiliate Program Logic ---
+
+    const STORAGE_KEY = 'aisubhub_affiliate';
+
+    function getAffiliateData() {
+      try {
+        const d = localStorage.getItem(STORAGE_KEY);
+        return d ? JSON.parse(d) : null;
+      } catch { return null; }
+    }
+
+    function saveAffiliateData(data) {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); } catch {}
+    }
+
+    function getRefLink() {
+      const data = getAffiliateData();
+      if (data && data.username) {
+        return 'https://aisubhub.pages.dev/?ref=' + encodeURIComponent(data.username);
+      }
+      return 'https://aisubhub.pages.dev';
+    }
+
+    // Generate link
+    document.getElementById('generateLinkBtn').addEventListener('click', function() {
+      const name = document.getElementById('affName').value.trim();
+      const email = document.getElementById('affEmail').value.trim();
+      const wallet = document.getElementById('affUSDT').value.trim();
+
+      if (!name) {
+        showToast('Please enter a name/ID for your referral link');
+        return;
+      }
+      if (!/^[a-zA-Z0-9_]+$/.test(name)) {
+        showToast('Use only letters, numbers, and underscores');
+        return;
+      }
+      if (!email || !email.includes('@')) {
+        showToast('Please enter a valid email');
+        return;
+      }
+
+      const data = {
+        username: name,
+        email: email,
+        wallet: wallet || 'Not provided',
+        createdAt: new Date().toISOString(),
+        clicks: 0,
+        conversions: 0,
+        earnings: 0,
+        clickLog: [],
+      };
+
+      saveAffiliateData(data);
+      displayReferralLink();
+      showToast('✅ Referral link created!');
+    });
+
+    function displayReferralLink() {
+      const data = getAffiliateData();
+      if (!data) return;
+
+      const link = 'https://aisubhub.pages.dev/?ref=' + encodeURIComponent(data.username);
+      document.getElementById('referralLink').value = link;
+      document.getElementById('referralResult').classList.add('visible');
+      document.getElementById('affStats').textContent =
+        data.clicks + ' clicks • ' + data.conversions + ' conversions • $' + data.earnings.toFixed(2) + ' earned';
+    }
+
+    // Copy referral link
+    document.getElementById('copyRefLink').addEventListener('click', function() {
+      const input = document.getElementById('referralLink');
+      input.select();
+      navigator.clipboard.writeText(input.value).then(() => {
+        this.textContent = '✅ Copied!';
+        setTimeout(() => { this.textContent = '📋 Copy'; }, 2000);
+      }).catch(() => {
+        document.execCommand('copy');
+        this.textContent = '✅ Copied!';
+        setTimeout(() => { this.textContent = '📋 Copy'; }, 2000);
+      });
+    });
+
+    // Copy promo text
+    function copyText(el, text) {
+      navigator.clipboard.writeText(text).then(() => {
+        const orig = el.querySelector('p')?.textContent || '';
+        el.querySelector('p').textContent = '✅ Copied!';
+        setTimeout(() => { el.querySelector('p').textContent = orig; }, 2000);
+      }).catch(() => {
+        showToast('Click to copy failed. Please select the text manually.');
+      });
+    }
+
+    // FAQ toggle
+    function toggleFaq(el) {
+      const item = el.closest('.faq-item');
+      item.classList.toggle('open');
+    }
+
+    // Toast
+    function showToast(msg) {
+      const t = document.getElementById('affToast');
+      t.textContent = msg;
+      t.classList.add('show');
+      clearTimeout(t._hide);
+      t._hide = setTimeout(() => t.classList.remove('show'), 2500);
+    }
+
+    // Restore on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      if (getAffiliateData()) {
+        document.getElementById('signupSection').querySelector('h2').textContent = '🔗 Your Referral Link';
+        document.getElementById('affName').value = getAffiliateData().username || '';
+        document.getElementById('affEmail').value = getAffiliateData().email || '';
+        document.getElementById('affUSDT').value = getAffiliateData().wallet || '';
+        document.getElementById('generateLinkBtn').textContent = '🔄 Regenerate Link';
+        displayReferralLink();
+      }
+    });
+  </script>
+</body>
+</html>

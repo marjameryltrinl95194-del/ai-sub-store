@@ -181,6 +181,82 @@
   };
 
   // ============================================
+  // Affiliate / Referral Tracking
+  // ============================================
+  const AFFILIATE_KEY = 'aisubhub_affiliate';
+  const REF_CLICKS_KEY = 'aisubhub_ref_clicks';
+
+  function getAffiliateData() {
+    try {
+      const d = localStorage.getItem(AFFILIATE_KEY);
+      return d ? JSON.parse(d) : null;
+    } catch { return null; }
+  }
+
+  function saveAffiliateData(data) {
+    try { localStorage.setItem(AFFILIATE_KEY, JSON.stringify(data)); } catch {}
+  }
+
+  function getRefClicks() {
+    try {
+      const d = localStorage.getItem(REF_CLICKS_KEY);
+      return d ? JSON.parse(d) : [];
+    } catch { return []; }
+  }
+
+  function saveRefClicks(clicks) {
+    try { localStorage.setItem(REF_CLICKS_KEY, JSON.stringify(clicks)); } catch {}
+  }
+
+  /**
+   * Track an incoming referral click from URL param `?ref=USERNAME`
+   * Stores ref in sessionStorage for attribution, records click in affiliate's data
+   */
+  function trackReferral() {
+    const params = new URLSearchParams(window.location.search);
+    const ref = params.get('ref');
+    if (!ref || !/^[a-zA-Z0-9_]+$/.test(ref)) return;
+
+    // Store current referral in sessionStorage (persists during this visit)
+    try { sessionStorage.setItem('aisubhub_ref', ref); } catch {}
+
+    // Record click in affiliate's localStorage data
+    const refClicks = getRefClicks();
+    // Dedup: only record one click per ref per session
+    const existing = refClicks.find(c => c.ref === ref && c.session === getSessionId());
+    if (!existing) {
+      refClicks.push({
+        ref: ref,
+        time: new Date().toISOString(),
+        session: getSessionId(),
+        action: 'click',
+        page: window.location.pathname || '/',
+      });
+      saveRefClicks(refClicks);
+
+      // Also update the affiliate's own stats (if they're logged in as affiliate)
+      const affData = getAffiliateData();
+      if (affData && affData.username !== ref) {
+        // This is a different affiliate's click — only update if we have their data
+        // (In a real system this would go to a server)
+      }
+    }
+  }
+
+  function getSessionId() {
+    let sid = sessionStorage.getItem('aisubhub_sid');
+    if (!sid) {
+      sid = 's' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+      sessionStorage.setItem('aisubhub_sid', sid);
+    }
+    return sid;
+  }
+
+  function getCurrentRef() {
+    try { return sessionStorage.getItem('aisubhub_ref'); } catch { return null; }
+  }
+
+  // ============================================
   // DOM Cache
   // ============================================
   let DOM = {};
@@ -1056,6 +1132,7 @@
             <span class="value">$${p.price.toFixed(2)} USD</span>
           </div>
           <div class="service-fee-info">💡 ${t('service_fee')} ${t('waived')}</div>
+          ${getCurrentRef() ? `<div style="margin-top:8px;font-size:0.75rem;color:var(--accent);text-align:center">🤝 Referred by <strong>${getCurrentRef()}</strong></div>` : ''}
         </div>
 
         <!-- Payment Method -->
@@ -1206,6 +1283,30 @@
 
     // Generate order
     state.orderNumber = 'AIS' + Date.now().toString(36).toUpperCase() + String(Math.floor(Math.random() * 1000)).padStart(3, '0');
+
+    // Record referral in order if present
+    const ref = getCurrentRef();
+    const orderData = {
+      number: state.orderNumber,
+      product: state.selectedProduct?.id,
+      email: email,
+      payment: state.selectedPayment,
+      amount: state.selectedProduct?.price,
+      ref: ref || null,
+      timestamp: new Date().toISOString(),
+    };
+
+    // Record conversion in affiliate click log
+    if (ref) {
+      const refClicks = getRefClicks();
+      const clickEntry = refClicks.find(c => c.ref === ref && c.session === getSessionId());
+      if (clickEntry) {
+        clickEntry.action = 'conversion';
+        clickEntry.amount = state.selectedProduct?.price || 0;
+        clickEntry.orderNumber = state.orderNumber;
+        saveRefClicks(refClicks);
+      }
+    }
 
     // Show payment step
     showToast(tt('toast_order_created', { number: state.orderNumber }));
@@ -1519,6 +1620,9 @@
     renderFAQ();
     updateStaticContent();
     generateCaptcha();
+
+    // Track referral if visiting via affiliate link
+    trackReferral();
 
     // Stats animation on scroll
     const observer = new IntersectionObserver((entries) => {

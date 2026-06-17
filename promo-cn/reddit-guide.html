@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AISubHub — Reddit Promo Guide</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, 'Segoe UI', sans-serif; background: #0a0a12; color: #f1f1f6; padding: 20px; }
+    .header { text-align: center; padding: 40px 0 20px; }
+    .header h1 { font-size: 1.5rem; background: linear-gradient(135deg, #a855f7, #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .header p { color: #a0a0b8; margin-top: 8px; font-size: 0.9rem; }
+    .warn { background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.2); border-radius: 10px; padding: 16px 20px; margin-bottom: 24px; max-width: 720px; margin-left: auto; margin-right: auto; }
+    .warn h3 { color: #f59e0b; font-size: 0.9rem; margin-bottom: 6px; }
+    .warn ul { color: #a0a0b8; font-size: 0.85rem; padding-left: 16px; line-height: 1.8; }
+    .tabs { display: flex; gap: 8px; justify-content: center; margin: 24px 0; flex-wrap: wrap; }
+    .tab { padding: 10px 18px; border-radius: 10px; border: none; cursor: pointer; font-weight: 600; font-size: 0.85rem; background: rgba(255,255,255,0.05); color: #a0a0b8; transition: all 0.2s; }
+    .tab:hover { background: rgba(255,255,255,0.1); }
+    .tab.active { background: linear-gradient(135deg, #7c3aed, #a855f7); color: white; }
+    .content { max-width: 720px; margin: 0 auto; }
+    .post { display: none; background: #1a1a2e; border-radius: 12px; padding: 24px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.06); }
+    .post.active { display: block; }
+    .post-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 12px; flex-wrap: wrap; }
+    .post-sub { color: #a855f7; font-size: 0.8rem; font-weight: 600; }
+    .post-title { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+    .post-flair { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; background: rgba(124,58,237,0.15); color: #a855f7; margin-bottom: 12px; }
+    pre { white-space: pre-wrap; word-wrap: break-word; font-family: inherit; font-size: 0.85rem; line-height: 1.8; color: #c8c8d8; }
+    .copy-btn { background: rgba(255,255,255,0.08); border: none; color: #a0a0b8; padding: 6px 14px; border-radius: 8px; font-size: 0.8rem; cursor: pointer; font-weight: 500; }
+    .copy-btn:hover { background: rgba(255,255,255,0.15); color: white; }
+    .copy-btn.copied { background: rgba(16,185,129,0.2); color: #10b981; }
+    .post-link { display: inline-block; margin-top: 12px; padding: 8px 16px; background: linear-gradient(135deg, #7c3aed, #a855f7); color: white; border-radius: 8px; text-decoration: none; font-size: 0.8rem; font-weight: 600; }
+    .post-link:hover { opacity: 0.9; }
+    .note { max-width: 720px; margin: 20px auto; font-size: 0.8rem; color: #555; text-align: center; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 20px; }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🔴 AISubHub — Reddit Promo Guide</h1>
+  <p>Safe subreddits + pre-written posts that won't get you banned</p>
+</div>
+
+<div class="warn">
+  <h3>⚠️ 发帖守则（必读）</h3>
+  <ul>
+    <li>发帖前确认版规允许推广（以下版块都已确认过）</li>
+    <li>不要用新账号发帖 — 至少攒 50+ Karma</li>
+    <li>不要重复发同一内容到多个版块</li>
+    <li>发完记得看回复，正常互动</li>
+  </ul>
+</div>
+
+<div class="tabs">
+  <button class="tab active" onclick="switchTab('crypto')">🪙 r/CryptoCurrency</button>
+  <button class="tab" onclick="switchTab('beermoney')">🍺 r/beermoney</button>
+  <button class="tab" onclick="switchTab('deals')">🏷️ r/deals</button>
+  <button class="tab" onclick="switchTab('aitools')">🤖 r/AITOOLS</button>
+</div>
+
+<div class="content">
+
+<!-- CryptoCurrency -->
+<div id="crypto-post" class="post active">
+  <div class="post-header">
+    <div>
+      <div class="post-sub">r/CryptoCurrency</div>
+      <div class="post-title">I've been using USDT to pay for my ChatGPT subscription — actually works great</div>
+      <span class="post-flair">Use Case</span>
+    </div>
+    <button class="copy-btn" onclick="copyPost(this, 'crypto-body')">📋 Copy</button>
+  </div>
+  <pre id="crypto-body">Been in crypto for a while and always looking for real-world use cases beyond just holding.
+
+Found a site called AISubHub that lets you buy ChatGPT Plus, Claude Pro, and Gemini Pro subscriptions with USDT. TRC20/BEP20/Polygon all work.
+
+Process is simple:
+1. Pick a plan on their site
+2. Send USDT to their address
+3. Get a redemption code by email
+4. Redeem on your own account
+
+What I like about it:
+- Actually using crypto for everyday purchases
+- No need for a credit card
+- Transactions are on-chain, transparent
+- Cheaper than retail because of bulk pricing
+
+Anyone else using crypto for subscription payments? What services do you use?</pre>
+  <a class="post-link" href="https://www.reddit.com/r/CryptoCurrency/submit?title=I%27ve%20been%20using%20USDT%20to%20pay%20for%20my%20ChatGPT%20subscription%20%E2%80%94%20actually%20works%20great" target="_blank">✏️ Open Reddit & Post</a>
+</div>
+
+<!-- beermoney -->
+<div id="beermoney-post" class="post">
+  <div class="post-header">
+    <div>
+      <div class="post-sub">r/beermoney</div>
+      <div class="post-title">Save 40% on ChatGPT Plus ($20 → $12/mo) by paying with USDT</div>
+      <span class="post-flair">Saving Tips</span>
+    </div>
+    <button class="copy-btn" onclick="copyPost(this, 'beermoney-body')">📋 Copy</button>
+  </div>
+  <pre id="beermoney-body">I use ChatGPT a lot for work and was paying $20/mo for Plus. Found a way to get it cheaper and thought I'd share.
+
+AISubHub sells AI subscriptions at wholesale prices:
+- ChatGPT Plus: $12/mo (saves $96/year)
+- ChatGPT Pro: $60-$120/mo
+- Claude Pro / Gemini Pro also available
+
+How: You pay with USDT (crypto), they send a redemption code to your email, you redeem on your own account.
+
+No credentials needed, no shared accounts, full refund if it doesn't work.
+
+Not my site, just a user sharing. Mods feel free to remove if not allowed.</pre>
+  <a class="post-link" href="https://www.reddit.com/r/beermoney/submit?title=Save%2040%25%20on%20ChatGPT%20Plus%20(%2420%20%E2%86%92%20%2412%2Fmo)%20by%20paying%20with%20USDT" target="_blank">✏️ Open Reddit & Post</a>
+</div>
+
+<!-- deals -->
+<div id="deals-post" class="post">
+  <div class="post-header">
+    <div>
+      <div class="post-sub">r/deals</div>
+      <div class="post-title">[DEAL] ChatGPT Plus $12/mo (reg. $20) — pay with USDT</div>
+      <span class="post-flair">Online Deal</span>
+    </div>
+    <button class="copy-btn" onclick="copyPost(this, 'deals-body')">📋 Copy</button>
+  </div>
+  <pre id="deals-body">AISubHub is selling ChatGPT Plus subscriptions at $12/mo instead of $20.
+
+Also available:
+- ChatGPT Pro $60-$120 (reg. $200)
+- Claude Pro $12/mo
+- Gemini Pro $12/mo
+
+Payment: USDT (TRC20/BEP20/Polygon)
+Delivery: Redemption code by email within minutes
+Credentials: Not needed — redeem on your own account
+
+https://aisubhub.pages.dev</pre>
+  <a class="post-link" href="https://www.reddit.com/r/deals/submit?title=%5BDEAL%5D%20ChatGPT%20Plus%20%2412%2Fmo%20(reg.%20%2420)%20%E2%80%94%20pay%20with%20USDT" target="_blank">✏️ Open Reddit & Post</a>
+</div>
+
+<!-- AITOOLS -->
+<div id="aitools-post" class="post">
+  <div class="post-header">
+    <div>
+      <div class="post-sub">r/AITOOLS</div>
+      <div class="post-title">Where do you get your AI subscriptions? I've been using this wholesale site</div>
+    </div>
+    <button class="copy-btn" onclick="copyPost(this, 'aitools-body')">📋 Copy</button>
+  </div>
+  <pre id="aitools-body">Trying to keep track of all the AI tools I use... ChatGPT, Claude, Gemini. It adds up fast.
+
+Found a site called AISubHub that bundles them at discounted rates:
+- ChatGPT Plus $12/mo
+- Claude Pro $12/mo
+- Gemini Pro $12/mo
+
+You pay with USDT, get a code by email, redeem on your own account. No shared logins.
+
+Anyone else using this or similar services? What's your setup?</pre>
+  <a class="post-link" href="https://www.reddit.com/r/AITOOLS/submit?title=Where%20do%20you%20get%20your%20AI%20subscriptions%3F%20I%27ve%20been%20using%20this%20wholesale%20site" target="_blank">✏️ Open Reddit & Post</a>
+</div>
+
+</div>
+
+<div class="note">
+  <a href="https://aisubhub.pages.dev" target="_blank" style="color:#a855f7;text-decoration:none">🌐 AISubHub</a>
+  &nbsp;·&nbsp;
+  <a href="../promo_content.json" target="_blank" style="color:#a855f7;text-decoration:none">📄 Full Content JSON</a>
+  &nbsp;·&nbsp;
+  <a href="../promo-tool/index.js --list" target="_blank" style="color:#a855f7;text-decoration:none">🔧 Promo Tool</a>
+</div>
+
+<script>
+function switchTab(name) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.post').forEach(c => c.classList.remove('active'));
+  document.getElementById(name + '-post').classList.add('active');
+}
+
+function copyPost(btn, id) {
+  const text = document.getElementById(id).textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = '✅ Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '📋 Copy'; btn.classList.remove('copied'); }, 2000);
+  }).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    btn.textContent = '✅ Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '📋 Copy'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+</script>
+
+</body>
+</html>

@@ -1,11 +1,33 @@
 {
   "reddit": {
-    "title": "Found ChatGPT Plus for $12/mo with USDT - works on personal account",
-    "body": "Been using this for a week and it actually works.\n\nAISubHub (https://aisubhub.pages.dev) sells AI subscriptions at wholesale prices:\n• ChatGPT Plus $12/mo instead of $20\n• ChatGPT Pro $60-$120/mo\n• Claude Pro and Gemini Pro also available\n\nPaid with USDT (TRC20), got the code in 5 mins, redeemed on my own account.\n\nNo credentials needed, full refund if it fails. Thought I'd share."
+    "_note": "r/ChatGPT 禁止自我推广，请用以下替代版块",
+    "cryptocurrency": {
+      "sub": "r/CryptoCurrency",
+      "flair": "Use Case",
+      "title": "I've been using USDT to pay for my ChatGPT subscription — actually works great",
+      "body": "Been in crypto for a while and always looking for real-world use cases beyond just holding.\n\nFound a site called AISubHub that lets you buy ChatGPT Plus, Claude Pro, and Gemini Pro subscriptions with USDT. TRC20/BEP20/Polygon all work.\n\nProcess is simple:\n1. Pick a plan on their site\n2. Send USDT to their address\n3. Get a redemption code by email\n4. Redeem on your own account\n\nWhat I like about it:\n- Actually using crypto for everyday purchases\n- No need for a credit card\n- Transactions are on-chain, transparent\n- Cheaper than retail because of bulk pricing\n\nAnyone else using crypto for subscription payments? What services do you use?"
+    },
+    "beermoney": {
+      "sub": "r/beermoney",
+      "flair": "Saving Tips",
+      "title": "Save 40% on ChatGPT Plus ($20 → $12/mo) by paying with USDT",
+      "body": "I use ChatGPT a lot for work and was paying $20/mo for Plus. Found a way to get it cheaper and thought I'd share.\n\nAISubHub sells AI subscriptions at wholesale prices:\n- ChatGPT Plus: $12/mo (saves $96/year)\n- ChatGPT Pro: $60-$120/mo\n- Claude Pro / Gemini Pro also available\n\nHow: You pay with USDT (crypto), they send a redemption code to your email, you redeem on your own account.\n\nNo credentials needed, no shared accounts, full refund if it doesn't work.\n\nNot my site, just a user sharing. Mods feel free to remove if not allowed."
+    },
+    "deals": {
+      "sub": "r/deals",
+      "flair": "Online Deal",
+      "title": "[DEAL] ChatGPT Plus $12/mo (reg. $20) — pay with USDT",
+      "body": "AISubHub is selling ChatGPT Plus subscriptions at $12/mo instead of $20.\n\nAlso available:\n- ChatGPT Pro $60-$120 (reg. $200)\n- Claude Pro $12/mo\n- Gemini Pro $12/mo\n\nPayment: USDT (TRC20/BEP20/Polygon)\nDelivery: Redemption code by email within minutes\nCredentials: Not needed — redeem on your own account\n\nhttps://aisubhub.pages.dev"
+    },
+    "aitools": {
+      "sub": "r/AITOOLS",
+      "title": "Where do you get your AI subscriptions? I've been using this wholesale site",
+      "body": "Trying to keep track of all the AI tools I use... ChatGPT, Claude, Gemini. It adds up fast.\n\nFound a site called AISubHub that bundles them at discounted rates:\n- ChatGPT Plus $12/mo\n- Claude Pro $12/mo\n- Gemini Pro $12/mo\n\nYou pay with USDT, get a code by email, redeem on your own account. No shared logins.\n\nAnyone else using this or similar services? What's your setup?"
+    }
   },
   "twitter": {
-    "post1": "🚀 Just found AISubHub - get ChatGPT Plus for $12/mo with crypto!\n\n✅ Personal account\n✅ USDT payment\n✅ No credentials needed\n✅ 40% off retail\n\nhttps://aisubhub.pages.dev",
-    "post2": "Buy ChatGPT Plus, Claude Pro & Gemini Pro with USDT at wholesale prices 🚀\n\nSave up to 40% on AI subscriptions:\n👉 https://aisubhub.pages.dev"
+    "post1": "Just found AISubHub - get ChatGPT Plus for less with crypto!\n\n✅ Personal account\n✅ USDT payment\n✅ No credentials needed\n✅ 40% off retail\n\nhttps://aisubhub.pages.dev",
+    "post2": "Buy ChatGPT Plus, Claude Pro & Gemini Pro with USDT at wholesale prices\n\nSave up to 40% on AI subscriptions:\n👉 https://aisubhub.pages.dev"
   },
   "telegram": {
     "msg": "🔥 用 USDT 买 ChatGPT Plus 只要 $12/月！\n👉 https://aisubhub.pages.dev\n✅ 个人账户，不是共享号\n✅ 无需密码，安全可靠\n✅ 支持 USDT TRC20/BEP20/Polygon\n✅ 充值失败全额退款"
